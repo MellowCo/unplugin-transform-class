@@ -3,6 +3,7 @@ import type { Options } from './types'
 
 export default createUnplugin<Options>(options => ({
   name: 'unplugin-transform-wx-class',
+  enforce:'pre',
   transformInclude(id) {
     return id.endsWith('.vue')
   },
