@@ -96,8 +96,7 @@
     "miniprogram-api-typings": "*",
     "postcss-comment": "^2.0.0",
     "unocss": "^0.43.0",
-    "unocss-preset-wxapp": "^0.0.6",
-    "vue-template-compiler": "^2.6.11"
+    "unocss-preset-wxapp": "^0.0.6"
   },
   "browserslist": [
     "Android >= 4.4",

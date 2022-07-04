@@ -1,3 +1,5 @@
 import unplugin from '.'
 
-export default unplugin.vite
+export {transformSelector} from './core'
+
+export const transformWxClass = unplugin.vite

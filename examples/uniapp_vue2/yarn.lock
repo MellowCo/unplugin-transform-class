@@ -11023,7 +11023,7 @@ vue-style-loader@^4.1.0, vue-style-loader@^4.1.2:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
 
-vue-template-compiler@^2.6.10, vue-template-compiler@^2.6.11, vue-template-compiler@^2.6.7:
+vue-template-compiler@^2.6.10, vue-template-compiler@^2.6.7:
   version "2.7.1"
   resolved "https://registry.npmjs.org/vue-template-compiler/-/vue-template-compiler-2.7.1.tgz#ebbefd9cc9a7b9ee9ee6862fa1ec3a9bf3959963"
   integrity sha512-ku/H1k1yHAgY0BEdoXVj7xZIjuFSwB2IV3nQWnmUMJ6U1jzK56LPHLWzEe5bTzt0WR0b/rJRkuiig44SUoaBoQ==

@@ -1,7 +1,8 @@
 // webpack.config.js
 const UnoCSS = require('unocss/webpack').default
 const presetWxapp = require('unocss-preset-wxapp').default
-const transformWxClass =  require('../../dist/webpack')
+const transformWxClass =  require('../../dist/webpack.cjs')
+const transformSelector = require('../../dist/transformSelector.cjs')
 
 module.exports = {
   configureWebpack: {
@@ -17,7 +18,7 @@ module.exports = {
           },
         ],
         postprocess: (css) => {
-          // css.selector = transformSelector(css.selector)
+          css.selector = transformSelector(css.selector)
           return css
         },
       }),
