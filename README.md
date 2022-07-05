@@ -35,13 +35,13 @@ const transformRules = {
 # 创建uni-app
 vue create -p dcloudio/uni-preset-vue my-project
 # 安装unocss
-pnpm add -D unocss unplugin-transform-wx-class unocss-preset-wxapp
+pnpm add -D unocss @unocss/webpack unplugin-transform-wx-class unocss-preset-wxapp
 ```
 
 >  vue.config.js
 
 ```ts
-// webpack.config.js
+
 const UnoCSS = require('unocss/webpack').default
 const presetWxapp = require('unocss-preset-wxapp').default
 const transformWxClass =  require('unplugin-transform-wx-class/webpack')
@@ -89,7 +89,6 @@ pnpm add -D unocss unplugin-transform-wx-class unocss-preset-wxapp
 > vite.config.ts
 
 ```ts
-// vite.config.ts
 import { defineConfig } from 'vite'
 import uni from '@dcloudio/vite-plugin-uni'
 import Unocss from 'unocss/vite'
@@ -118,6 +117,18 @@ export default defineConfig({
   ],
 })
 ```
+
+
+
+---
+
+## 示例
+
+[uniapp_vue3](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/uniapp_vue3)
+
+[uniapp_vue2](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/uniapp_vue2)
+
+<img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207031414239.png" alt="image-20220703141451188" style="zoom:50%;" />
 
 
 
