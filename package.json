@@ -2,13 +2,15 @@
   "name": "unplugin-transform-wx-class",
   "version": "0.0.1",
   "packageManager": "pnpm@7.1.1",
-  "description": "Register global imports on demand for Vite and Webpack",
+  "description": "转换微信小程序中带有转义字符的class",
   "keywords": [
     "unplugin",
     "vite",
     "webpack",
     "rollup",
-    "transform"
+    "transform",
+    "wx",
+    "class"
   ],
   "homepage": "https://github.com/MellowCo/unplugin-transform-wx-class#readme",
   "bugs": {
