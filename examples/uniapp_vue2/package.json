@@ -96,7 +96,8 @@
     "miniprogram-api-typings": "*",
     "postcss-comment": "^2.0.0",
     "unocss": "^0.43.0",
-    "unocss-preset-wxapp": "^0.0.6"
+    "unocss-preset-wxapp": "^0.0.6",
+    "unplugin-transform-wx-class": "link:../../"
   },
   "browserslist": [
     "Android >= 4.4",

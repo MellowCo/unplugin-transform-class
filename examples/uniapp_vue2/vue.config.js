@@ -1,8 +1,8 @@
 // webpack.config.js
 const UnoCSS = require('unocss/webpack').default
 const presetWxapp = require('unocss-preset-wxapp').default
-const transformWxClass =  require('../../dist/webpack.cjs')
-const transformSelector = require('../../dist/transformSelector.cjs')
+const transformWxClass =  require('unplugin-transform-wx-class/webpack')
+const transformSelector = require('unplugin-transform-wx-class/transformSelector')
 
 module.exports = {
   configureWebpack: {
