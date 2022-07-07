@@ -5,7 +5,7 @@
 export function getClass(code: string) {
   const matchs: string[][] = []
 
-  Array.from(code.matchAll(/class="(.+?)"/g)).forEach((m) => {
+  Array.from(code.matchAll(/class="((?:\n|.)+?)"/g)).forEach((m) => {  
     const classStr = m[1]
     let classArr = [m[0]]
 
@@ -51,6 +51,7 @@ const transformRules: { [key: string]: string } = {
 
 export function transformCode(code: string) {
   const classNames = getClass(code)
+  console.log('[ classNames ] >' , classNames)
   classNames.forEach((c) => {
     let newClass = c[0]
     c.slice(1).forEach((v) => {
