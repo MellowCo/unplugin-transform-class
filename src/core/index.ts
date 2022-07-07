@@ -70,7 +70,6 @@ export function transformSelector(selector: string, hasEscape = true) {
     selector = selector.slice(1)
 
   if (/[\.\/:%!#\(\)\[\]$]/.test(selector)) {
-    console.log('[ selector ] >' , selector)
     for (const transformRule in transformRules){
       selector = selector.replaceAll(`${prefix}${transformRule}`, transformRules[transformRule])
     }
