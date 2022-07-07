@@ -2,7 +2,7 @@
  * 获取class
  * @param code - 源码
  */
- export function getClass(code: string) {
+export function getClass(code: string) {
   const matchs: string[][] = []
 
   Array.from(code.matchAll(/class="(.+?)"/g)).forEach((m) => {
@@ -70,8 +70,10 @@ export function transformSelector(selector: string, hasEscape = true) {
     selector = selector.slice(1)
 
   if (/[\.\/:%!#\(\)\[\]$]/.test(selector)) {
-    for (const transformRule in transformRules)
-      selector = selector.replace(`${prefix}${transformRule}`, transformRules[transformRule])
+    console.log('[ selector ] >' , selector)
+    for (const transformRule in transformRules){
+      selector = selector.replaceAll(`${prefix}${transformRule}`, transformRules[transformRule])
+    }
   }
 
   return start ? `.${selector}` : selector
