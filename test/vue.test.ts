@@ -45,7 +45,7 @@ const code = `<template>
 </view>
 </template>`
 
-describe('should', () => {
+describe('vue', () => {
   it('getArrClass', () => {
     const code = `[
         title === '2.3' ? 'font-$font-name bg-teal-200:55' :'tracking-[2/5]',

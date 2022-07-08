@@ -4,11 +4,10 @@
  */
 export function getClass(code: string) {
   const matchs: string[][] = []
-
-  Array.from(code.matchAll(/class="((?:\n|.)+?)"/g)).forEach((m) => {  
+  // vue
+  Array.from(code.matchAll(/class="((?:\n|.)+?)"/g)).forEach((m) => {
     const classStr = m[1]
     let classArr = [m[0]]
-
     if (classStr.startsWith('{'))
       classArr = classArr.concat(getObjClass(classStr))
     else if (classStr.startsWith('['))
@@ -16,6 +15,10 @@ export function getClass(code: string) {
     else
       classArr.push(classStr)
     matchs.push(classArr)
+  })
+  // jsx tsx
+  Array.from(code.matchAll(/className=["']((?:\n|.)+?)["']/g)).forEach((m) => {
+    matchs.push([m[0], m[1]])
   })
   return matchs
 }
@@ -35,7 +38,7 @@ export function getArrClass(className: string) {
   return Array.from(className.matchAll(/(?<=[\?\:])\s*'(.+?)'/g)).map(v => v[1])
 }
 
-const transformRules: { [key: string]: string } = {
+const transformRules: Record<string, string> = {
   '.': '-d-',
   '/': '-s-',
   ':': '-c-',
@@ -51,7 +54,6 @@ const transformRules: { [key: string]: string } = {
 
 export function transformCode(code: string) {
   const classNames = getClass(code)
-  console.log('[ classNames ] >' , classNames)
   classNames.forEach((c) => {
     let newClass = c[0]
     c.slice(1).forEach((v) => {
@@ -71,9 +73,8 @@ export function transformSelector(selector: string, hasEscape = true) {
     selector = selector.slice(1)
 
   if (/[\.\/:%!#\(\)\[\]$]/.test(selector)) {
-    for (const transformRule in transformRules){
+    for (const transformRule in transformRules)
       selector = selector.replaceAll(`${prefix}${transformRule}`, transformRules[transformRule])
-    }
   }
 
   return start ? `.${selector}` : selector

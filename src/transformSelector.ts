@@ -1,3 +1,3 @@
-import {transformSelector} from './core'
+import { transformSelector } from './core'
 
 export default transformSelector

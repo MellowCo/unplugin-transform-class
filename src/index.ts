@@ -1,12 +1,12 @@
 import { createUnplugin } from 'unplugin'
 import type { Options } from './types'
-import {transformCode} from './core'
+import { transformCode } from './core'
 
 export default createUnplugin<Options>(() => ({
   name: 'unplugin-transform-wx-class',
-  enforce:'pre',
+  enforce: 'pre',
   transformInclude(id) {
-    return id.endsWith('.vue')
+    return id.endsWith('.vue') || id.endsWith('.jsx') || id.endsWith('.tsx')
   },
   transform(code) {
     return transformCode(code)
