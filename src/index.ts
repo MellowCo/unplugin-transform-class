@@ -6,7 +6,7 @@ export default createUnplugin<Options>(() => ({
   name: 'unplugin-transform-wx-class',
   enforce: 'pre',
   transformInclude(id) {
-    return id.endsWith('.vue') || id.endsWith('.jsx') || id.endsWith('.tsx')
+    return /.(vue|jsx|tsx)$/.test(id)
   },
   transform(code) {
     return transformCode(code)

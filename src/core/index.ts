@@ -16,7 +16,7 @@ export function getClass(code: string) {
       classArr.push(classStr)
     matchs.push(classArr)
   })
-  // jsx tsx
+  // react jsx tsx
   Array.from(code.matchAll(/className=["']((?:\n|.)+?)["']/g)).forEach((m) => {
     matchs.push([m[0], m[1]])
   })
@@ -66,15 +66,17 @@ export function transformCode(code: string) {
 }
 
 export function transformSelector(selector: string, hasEscape = true) {
-  const prefix = hasEscape ? '\\' : ''
+  const prefix = hasEscape ? '\\\\\\' : '\\'
   const start = selector.startsWith('.')
 
   if (start)
     selector = selector.slice(1)
 
   if (/[\.\/:%!#\(\)\[\]$]/.test(selector)) {
-    for (const transformRule in transformRules)
-      selector = selector.replaceAll(`${prefix}${transformRule}`, transformRules[transformRule])
+    for (const transformRule in transformRules) {
+      const replaceReg = new RegExp(`${prefix}${transformRule}`, 'g')
+      selector = selector.replace(replaceReg, transformRules[transformRule])
+    }
   }
 
   return start ? `.${selector}` : selector
