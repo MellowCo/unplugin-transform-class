@@ -104,12 +104,12 @@ describe('vue', () => {
   })
 
   it('transformCode-replaceAll', () => {
-    const code = `<view class="text-red-500:20  bg-blue-200:20">
+    const code = `<view class="text-red-500:20  bg-blue-200:20 bg-[#333]/50 bg-[#999]/50">
     text-red-500:20
   </view>`
     expect(transformCode(code)).toMatchInlineSnapshot(
     `
-      "<view class=\\"text-red-500-c-20  bg-blue-200-c-20\\">
+      "<view class=\\"text-red-500-c-20  bg-blue-200-c-20 bg--fl--w-333-fr--s-50 bg--fl--w-999-fr--s-50\\">
           text-red-500:20
         </view>"
     `)

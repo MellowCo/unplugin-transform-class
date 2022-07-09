@@ -1,8 +1,8 @@
 /* eslint-disable import/no-commonjs */
 const UnoCSS = require('unocss/webpack').default
 const presetWxapp = require('unocss-preset-wxapp').default
-const transformWxClass = require('../../../dist/webpack')
-const transformSelector = require('../../../dist/transformSelector')
+const transformWxClass = require('unplugin-transform-wx-class/webpack')
+const transformSelector = require('unplugin-transform-wx-class/transformSelector')
 
 const config = {
   projectName: 'taro_react',
