@@ -10,15 +10,11 @@ async function run() {
     cwd: resolve(__dirname, '../dist'),
   })
   for (const file of files) {
-    // eslint-disable-next-line no-console
     console.log(chalk.cyan.inverse(' POST '), `Fix ${basename(file)}`)
     // fix cjs exports
     let code = await fs.readFile(file, 'utf8')
     code += 'if (module.exports.default) module.exports = module.exports.default;'
     await fs.writeFile(file, code)
-    // generate submodule .d.ts redirecting
-    const name = basename(file, '.js')
-    await fs.writeFile(`${name}.d.ts`, `export * from './dist/${name}'\n`)
   }
 }
 
