@@ -49,10 +49,6 @@
       "require": "./dist/types.js",
       "import": "./dist/types.mjs"
     },
-    "./transformSelector": {
-      "require": "./dist/transformSelector.js",
-      "import": "./dist/transformSelector.mjs"
-    },
     "./*": "./*"
   },
   "files": [
