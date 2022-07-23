@@ -4,7 +4,7 @@
 
 > 使用该插件转换微信小程序中带有特殊转义`class`，例如`\[` `\!` `\.`
 >
-> 结合[unocss 小程序预设](https://github.com/MellowCo/unocss-preset-weapp)，实现`unocss`在小程序中开发使用
+> 结合[unocss 小程序预设](https://github.com/MellowCo/unocss-preset-weapp)，实现 `unocss` 在小程序中开发使用
 
 ## 转换规则
 ```js
@@ -114,9 +114,12 @@ export default defineConfig({
 
 ## 示例
 
-[uniapp_vue3](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/uniapp_vue3)
 
-[uniapp_vue2](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/uniapp_vue2)
+[uniapp_vue3](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/uniapp_vue3)   
+[uniapp_vue2](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/uniapp_vue2)   
+[taro_react](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro_react)   
+[taro_vue2](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro_vue2)   
+[taro_vue3](https://github.com/MellowCo/unocss-preset-weapp/tree/main/examples/taro_vue3)  
 
 <img src="https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207031414239.png" alt="image-20220703141451188" style="zoom:50%;" />
 
