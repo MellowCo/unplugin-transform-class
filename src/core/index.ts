@@ -1,6 +1,5 @@
 /**
  * 获取class
- * @param code - 源码
  */
 export function getClass(code: string) {
   const matchs: string[][] = []
@@ -52,33 +51,31 @@ const transformRules: Record<string, string> = {
   '$': '-r-',
 }
 
+const transformRegExp = /[\.\/:%!#\(\)\[\]$]/
+
 export function transformCode(code: string) {
   const classNames = getClass(code)
   classNames.forEach((c) => {
-    let newClass = c[0]
-    c.slice(1).forEach((v) => {
-      newClass = newClass.replace(v, transformSelector(v, false))
+    let currentClass = c[0]
+    c.slice(1).forEach((selector) => {
+      currentClass = currentClass.replace(selector, transformSelector(selector))
     })
-    code = code.replace(c[0], newClass)
+    code = code.replace(c[0], currentClass)
   })
 
   return code
 }
 
-export function transformSelector(selector: string, hasEscape = true) {
-  const prefix = hasEscape ? '\\\\\\' : '\\'
-  const start = selector.startsWith('.')
+export function transformSelector(selector: string) {
+  const escapePrefix = '\\'
 
-  if (start)
-    selector = selector.slice(1)
-
-  if (/[\.\/:%!#\(\)\[\]$]/.test(selector)) {
+  if (transformRegExp.test(selector)) {
     for (const transformRule in transformRules) {
-      const replaceReg = new RegExp(`${prefix}${transformRule}`, 'g')
+      const replaceReg = new RegExp(`${escapePrefix}${transformRule}`, 'g')
       selector = selector.replace(replaceReg, transformRules[transformRule])
     }
   }
 
-  return start ? `.${selector}` : selector
+  return selector
 }
 
