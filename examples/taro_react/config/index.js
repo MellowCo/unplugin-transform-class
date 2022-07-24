@@ -1,7 +1,7 @@
 /* eslint-disable import/no-commonjs */
 const UnoCSS = require('unocss/webpack').default
-const presetWxapp = require('unocss-preset-wxapp').default
-const transformWxClass = require('unplugin-transform-wx-class/webpack')
+const presetWeapp = require('unocss-preset-weapp').default
+const transformWeClass = require('unplugin-transform-we-class/webpack')
 
 const config = {
   projectName: 'taro_react',
@@ -50,7 +50,12 @@ const config = {
       chain.plugin('unocss')
         .use(UnoCSS({
           presets: [
-            presetWxapp(),
+            presetWeapp({
+              // h5兼容
+              isH5: process.env.TARO_ENV === 'h5',
+              platform: 'taro',
+              designWidth: 750
+            }),
           ],
           shortcuts: [
             {
@@ -61,8 +66,8 @@ const config = {
         }))
 
       chain
-        .plugin('transformWxClass')
-        .use(transformWxClass())
+        .plugin('transformWeClass')
+        .use(transformWeClass())
     },
   },
   h5: {
@@ -81,7 +86,30 @@ const config = {
           generateScopedName: '[name]__[local]___[hash:base64:5]'
         }
       }
-    }
+    },
+    webpackChain(chain){
+      chain.plugin('unocss')
+        .use(UnoCSS({
+          presets: [
+            presetWeapp({
+              // h5兼容
+              isH5: process.env.TARO_ENV === 'h5',
+              platform: 'taro',
+              designWidth: 750
+            }),
+          ],
+          shortcuts: [
+            {
+              'border-base': 'border border-gray-500_10',
+              'center': 'flex justify-center items-center',
+            },
+          ]
+        }))
+
+      chain
+        .plugin('transformWeClass')
+        .use(transformWeClass())
+    },
   }
 }
 

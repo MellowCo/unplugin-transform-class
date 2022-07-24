@@ -1,14 +1,14 @@
 // webpack.config.js
 const UnoCSS = require('unocss/webpack').default
-const presetWxapp = require('unocss-preset-wxapp').default
-const transformWxClass =  require('unplugin-transform-wx-class/webpack')
+const presetWeapp = require('unocss-preset-weapp').default
+const transformWeClass =  require('unplugin-transform-we-class/webpack')
 
 module.exports = {
   configureWebpack: {
     plugins: [
       UnoCSS({ 
         presets: [
-          presetWxapp(),
+          presetWeapp(),
         ],
         shortcuts: [
           {
@@ -17,7 +17,7 @@ module.exports = {
           },
         ],
       }),
-      transformWxClass()
+      transformWeClass()
     ],
   },
 }

@@ -1,6 +1,6 @@
-# unplugin-transform-wx-class
+# unplugin-transform-we-class
 
-[![NPM version](https://img.shields.io/npm/v/unplugin-transform-wx-class?color=a1b858&label=)](https://www.npmjs.com/package/unplugin-transform-wx-class)
+[![NPM version](https://img.shields.io/npm/v/unplugin-transform-we-class?color=a1b858&label=)](https://www.npmjs.com/package/unplugin-transform-we-class)
 
 > 使用该插件转换微信小程序中带有特殊转义`class`，例如`\[` `\!` `\.`
 >
@@ -35,22 +35,22 @@ const transformRules = {
 # 创建uni-app
 vue create -p dcloudio/uni-preset-vue my-project
 # 安装unocss
-pnpm add -D unocss @unocss/webpack unplugin-transform-wx-class unocss-preset-wxapp
+pnpm add -D unocss @unocss/webpack unplugin-transform-we-class unocss-preset-weapp
 ```
 
 >  vue.config.js
 
 ```ts
 const UnoCSS = require('unocss/webpack').default
-const presetWxapp = require('unocss-preset-wxapp').default
-const transformWxClass = require('unplugin-transform-wx-class/webpack')
+const presetWeapp = require('unocss-preset-weapp').default
+const transformWeClass = require('unplugin-transform-we-class/webpack')
 
 module.exports = {
   configureWebpack: {
     plugins: [
       UnoCSS({
         presets: [
-          presetWxapp(),
+          presetWeapp(),
         ],
         shortcuts: [
           {
@@ -59,7 +59,7 @@ module.exports = {
           },
         ],
       }),
-      transformWxClass()
+      transformWeClass()
     ],
   },
 }
@@ -77,7 +77,7 @@ module.exports = {
 # 使用Vue3/Vite版
 npx degit dcloudio/uni-preset-vue#vite-ts my-vue3-project
 # 安装unocss
-pnpm add -D unocss unplugin-transform-wx-class unocss-preset-wxapp
+pnpm add -D unocss unplugin-transform-we-class unocss-preset-weapp
 ```
 
 > vite.config.ts
@@ -86,15 +86,15 @@ pnpm add -D unocss unplugin-transform-wx-class unocss-preset-wxapp
 import { defineConfig } from 'vite'
 import uni from '@dcloudio/vite-plugin-uni'
 import Unocss from 'unocss/vite'
-import presetWxapp from 'unocss-preset-wxapp'
-import transformWxClass from 'unplugin-transform-wx-class/vite'
+import presetWeapp from 'unocss-preset-weapp'
+import transformWeClass from 'unplugin-transform-we-class/vite'
 
 export default defineConfig({
   plugins: [
     uni(),
     Unocss({
       presets: [
-        presetWxapp(),
+        presetWeapp(),
       ],
       shortcuts: [
         {
@@ -103,7 +103,7 @@ export default defineConfig({
         },
       ],
     }),
-    transformWxClass(),
+    transformWeClass(),
   ],
 })
 ```
