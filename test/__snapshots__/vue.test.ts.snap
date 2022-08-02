@@ -12,7 +12,7 @@ exports[`vue > getArrClass 1`] = `
 exports[`vue > getClass 1`] = `
 [
   [
-    "class=\\"text-red-500:20  bg-blue-200:20\\"",
+    " class=\\"text-red-500:20  bg-blue-200:20\\"",
     "text-red-500:20  bg-blue-200:20",
   ],
 ]
@@ -128,7 +128,6 @@ exports[`vue > transformCode 2`] = `
 </view>
 
 <view class=\\"content title foot\\">view</view>
-
 </view>
 </template>
 "
@@ -141,5 +140,43 @@ exports[`vue > transformCode 3`] = `
 </view>
 <view :class=\\"n.attrs.class\\"></view>  
 </template>
+"
+`;
+
+exports[`vue > transformCode 4`] = `
+"
+<view class=\\"\\"
+>1-d- xxxxxxxx。
+<-s-view>
+
+<view class=\\"\\">2. 22222222。 </view>
+"
+`;
+
+exports[`vue > transformCode 5`] = `
+"
+<uni-transition
+v-if=\\"maskShow\\"
+:mode-class=\\"['fade']\\"
+:styles=\\"maskClass\\"
+:duration=\\"duration\\"
+:show=\\"showTrans\\"
+@click=\\"onTap\\"
+/>
+<uni-transition
+:mode-class=\\"ani\\"
+:styles=\\"transClass\\"
+:duration=\\"duration\\"
+:show=\\"showTrans\\"
+@click=\\"onTap\\"
+>
+<view
+  class=\\"uni-popup__wrapper-box\\"
+  :class=\\"{isBottom: type == 'bottom'}\\"
+  @click.stop=\\"clear\\"
+>
+  <slot />
+</view>
+</uni-transition>
 "
 `;

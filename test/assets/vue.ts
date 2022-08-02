@@ -113,7 +113,6 @@ export const vueCode2 = `
 </view>
 
 <view class="content title foot">view</view>
-
 </view>
 </template>
 `
@@ -125,3 +124,38 @@ export const vueCode3 = `
 <view :class="n.attrs.class"></view>  
 </template>
 `
+
+export const vueCode4 = `
+<view class=""
+>1. xxxxxxxx。
+</view>
+
+<view class="">2. 22222222。 </view>
+`
+
+export const vueCode5 = `
+<uni-transition
+v-if="maskShow"
+:mode-class="['fade']"
+:styles="maskClass"
+:duration="duration"
+:show="showTrans"
+@click="onTap"
+/>
+<uni-transition
+:mode-class="ani"
+:styles="transClass"
+:duration="duration"
+:show="showTrans"
+@click="onTap"
+>
+<view
+  class="uni-popup__wrapper-box"
+  :class="{isBottom: type == 'bottom'}"
+  @click.stop="clear"
+>
+  <slot />
+</view>
+</uni-transition>
+`
+
