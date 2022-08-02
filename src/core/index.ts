@@ -4,7 +4,7 @@
 export function getClass(code: string) {
   const matchs: string[][] = []
   // vue
-  Array.from(code.matchAll(/\s:?class="((?:\n|.)+?)"/g)).forEach((m) => {
+  Array.from(code.matchAll(/\s:?class="((?:\n|.)*?)"/g)).forEach((m) => {
     const classStr = m[1]
     let classArr = [m[0]]
     // 是否为动态class :class
@@ -60,8 +60,6 @@ const transformRegExp = /[\.\/:%!#\(\)\[\]$]/
 
 export function transformCode(code: string) {
   const classNames = getClass(code)
-
-  console.log(classNames)
 
   classNames.forEach((c) => {
     let currentClass = c[0]

@@ -146,8 +146,8 @@ exports[`vue > transformCode 3`] = `
 exports[`vue > transformCode 4`] = `
 "
 <view class=\\"\\"
->1-d- xxxxxxxx。
-<-s-view>
+>1. xxxxxxxx。
+</view>
 
 <view class=\\"\\">2. 22222222。 </view>
 "
