@@ -6,7 +6,7 @@ export default createUnplugin<Options>(() => ({
   name: 'unplugin-transform-we-class',
   enforce: 'pre',
   transformInclude(id) {
-    return /.(vue|jsx|tsx)$/.test(id)
+    return !id.includes('node_modules') && /.(vue|jsx|tsx)$/.test(id)
   },
   transform(code) {
     return transformCode(code)
