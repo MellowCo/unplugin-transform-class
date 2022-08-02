@@ -133,3 +133,13 @@ exports[`vue > transformCode 2`] = `
 </template>
 "
 `;
+
+exports[`vue > transformCode 3`] = `
+"
+<template>
+<view v-if=\\"n.name=='img'\\" :class=\\"'_img '+n.attrs.class\\" :style=\\"n.attrs.style\\" :data-attrs=\\"n.attrs\\" @tap=\\"imgtap\\">
+</view>
+<view :class=\\"n.attrs.class\\"></view>  
+</template>
+"
+`;

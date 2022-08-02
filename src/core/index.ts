@@ -4,15 +4,20 @@
 export function getClass(code: string) {
   const matchs: string[][] = []
   // vue
-  Array.from(code.matchAll(/class="((?:\n|.)+?)"/g)).forEach((m) => {
+  Array.from(code.matchAll(/:?class="((?:\n|.)+?)"/g)).forEach((m) => {
     const classStr = m[1]
     let classArr = [m[0]]
-    if (classStr.startsWith('{'))
-      classArr = classArr.concat(getObjClass(classStr))
-    else if (classStr.startsWith('['))
-      classArr = classArr.concat(getArrClass(classStr))
-    else
+    // 是否为动态class :class
+    if (m[0].startsWith(':')) {
+      if (classStr.startsWith('{'))
+        classArr = classArr.concat(getObjClass(classStr))
+      else if (classStr.startsWith('['))
+        classArr = classArr.concat(getArrClass(classStr))
+    }
+    else {
       classArr.push(classStr)
+    }
+
     matchs.push(classArr)
   })
   // react jsx tsx
@@ -55,6 +60,8 @@ const transformRegExp = /[\.\/:%!#\(\)\[\]$]/
 
 export function transformCode(code: string) {
   const classNames = getClass(code)
+  console.log(classNames)
+
   classNames.forEach((c) => {
     let currentClass = c[0]
     c.slice(1).forEach((selector) => {

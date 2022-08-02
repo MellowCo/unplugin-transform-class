@@ -117,3 +117,11 @@ export const vueCode2 = `
 </view>
 </template>
 `
+// 非 [] {} 动态class
+export const vueCode3 = `
+<template>
+<view v-if="n.name=='img'" :class="'_img '+n.attrs.class" :style="n.attrs.style" :data-attrs="n.attrs" @tap="imgtap">
+</view>
+<view :class="n.attrs.class"></view>  
+</template>
+`
