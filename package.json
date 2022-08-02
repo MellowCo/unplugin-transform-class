@@ -1,6 +1,6 @@
 {
   "name": "unplugin-transform-we-class",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "转换微信小程序中带有转义字符的class",
   "license": "MIT",
   "homepage": "https://github.com/MellowCo/unplugin-transform-we-class#readme",
