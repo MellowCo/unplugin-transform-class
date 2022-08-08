@@ -8,6 +8,10 @@
 
 ![image-20220703141301371](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207031413496.png)
 
+
+## 注意
+* v0.1.10 版本 `unplugin` 升级到 `0.8.0` ,出现 `[` `:` 等字符转换失败，`v0.1.11` 版本修复 
+
 ## 转换规则
 ```js
 const transformRules = {
