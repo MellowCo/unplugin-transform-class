@@ -13,7 +13,7 @@
 
 <template>
   <view class="content">
-    <view class="indent-1/2 text-red-500/20  bg-blue-200/20 bg-[#333]:50"> indent-1/2 </view>
+    <view class="mb-2 indent-1/2 text-red-500/20  bg-blue-200/20 bg-[#333]:50"> indent-1/2 </view>
     <view class="font-[system-ui] bg-teal-200:55"> font-[system-ui]1 </view>
     <view class="font-$font-name"> font-$font-name </view>
 
