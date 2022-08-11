@@ -1,3 +1,5 @@
+import { transformSelector } from '../utils'
+
 /**
  * 获取class
  */
@@ -42,22 +44,6 @@ export function getArrClass(className: string) {
   return Array.from(className.matchAll(/(?<=[\?\:])\s*'(.+?)'/g)).map(v => v[1])
 }
 
-const transformRules: Record<string, string> = {
-  '.': '-d-',
-  '/': '-s-',
-  ':': '-c-',
-  '%': '-p-',
-  '!': '-e-',
-  '#': '-w-',
-  '(': '-bl-',
-  ')': '-br-',
-  '[': '-fl-',
-  ']': '-fr-',
-  '$': '-r-',
-}
-
-const transformRegExp = /[\.\/:%!#\(\)\[\]$]/
-
 export function transformCode(code: string) {
   const classNames = getClass(code)
 
@@ -71,17 +57,3 @@ export function transformCode(code: string) {
 
   return code
 }
-
-export function transformSelector(selector: string) {
-  const escapePrefix = '\\'
-
-  if (transformRegExp.test(selector)) {
-    for (const transformRule in transformRules) {
-      const replaceReg = new RegExp(`${escapePrefix}${transformRule}`, 'g')
-      selector = selector.replace(replaceReg, transformRules[transformRule])
-    }
-  }
-
-  return selector
-}
-
