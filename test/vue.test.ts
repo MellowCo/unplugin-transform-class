@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { getArrClass, getClass, getObjClass, transformCode } from '../src/core'
-import { getArrClassCode, getClassCode, getObjClassCode1, getObjClassCode2, replaceAllCode, vueCode, vueCode2, vueCode3, vueCode4, vueCode5 } from './assets/vue'
+import { firstUI, getArrClassCode, getClassCode, getObjClassCode1, getObjClassCode2, replaceAllCode, tmText, vueCode, vueCode2, vueCode3, vueCode4, vueCode5 } from './assets/vue'
 
 describe('vue', () => {
   it('getArrClass', () => {
@@ -14,6 +14,7 @@ describe('vue', () => {
 
   it('getClass', () => {
     expect(getClass(getClassCode)).toMatchSnapshot()
+    expect(getClass(tmText)).toMatchSnapshot()
   })
 
   it('replaceAll', () => {
@@ -26,5 +27,7 @@ describe('vue', () => {
     expect(transformCode(vueCode3)).toMatchSnapshot()
     expect(transformCode(vueCode4)).toMatchSnapshot()
     expect(transformCode(vueCode5)).toMatchSnapshot()
+    expect(transformCode(tmText)).toMatchSnapshot()
+    expect(transformCode(firstUI)).toMatchSnapshot()
   })
 })

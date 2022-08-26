@@ -1,3 +1,4 @@
+import { trim } from '@meoc/utils'
 import { transformSelector } from '../utils'
 
 /**
@@ -8,9 +9,12 @@ export function getClass(code: string) {
   // vue
   Array.from(code.matchAll(/\s:?class="((?:\n|.)*?)"/g)).forEach((m) => {
     const classStr = m[1]
-    let classArr = [m[0]]
+    const sourceStr = trim(m[0])
+
+    let classArr = [sourceStr]
+
     // 是否为动态class :class
-    if (m[0].startsWith(' :')) {
+    if (sourceStr.startsWith(':')) {
       if (classStr.startsWith('{'))
         classArr = classArr.concat(getObjClass(classStr))
       else if (classStr.startsWith('['))
@@ -41,7 +45,7 @@ export function getArrClass(className: string) {
   //   isFont ? 'font-$font-name' : 'tracking-[2/5]'
   // ]
   // => ['font-$font-name bg-teal-200:55', 'tracking-[2/5]','font-$font-name tracking-[2/5]']
-  return Array.from(className.matchAll(/(?<=[\?\:])\s*'(.+?)'/g)).map(v => v[1])
+  return Array.from(className.matchAll(/(?<=[\?\:])\s*'(.*?)'/g)).map(v => v[1])
 }
 
 export function transformCode(code: string) {

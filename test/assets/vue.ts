@@ -151,7 +151,7 @@ v-if="maskShow"
 >
 <view
   class="uni-popup__wrapper-box"
-  :class="{isBottom: type == 'bottom'}"
+  :class="{isBottom: type == 'bottom','text-center':true}"
   @click.stop="clear"
 >
   <slot />
@@ -159,3 +159,28 @@ v-if="maskShow"
 </uni-transition>
 `
 
+// tmui
+// <view>
+//   <text @click="emits('click', $event)" :selectable="selectable" :user-select="selectable"
+//     :class="[fontSize ? '' -c- 'text-size-m', customClass]" :style="[
+//   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+//       {
+//         lineHeight: (_fontSize ? _fontSize * 1.3 : 42) + props.unit, color: textColor
+export const tmText = `
+<text @click="emits('click', $event)" 
+:selectable="selectable" 
+:user-select="selectable" 
+:class="[fontSize ? '' : 'text-size-m', customClass]" :style="[
+  {
+    lineHeight: (_fontSize ? _fontSize * 1.3 : 42) + props.unit, color: textColor
+  },
+  _fontSize ? { fontSize: _fontSize + props.unit } : '',
+  customCSSStyle,
+]">
+<slot>{{ _label }}</slot>
+</text>`
+
+export const firstUI = `
+<text :style="{ color: color, fontSize: getSize, fontWeight: fontWeight}" class="fui-icon" :class="[!color && !primary?'fui-icon__color':'',primary && !color?'fui-icon__active-color':'',disabled?'fui-icon__not-allowed':'',customPrefix,customPrefix?name:'']"
+@click="handleClick">{{ icons[name] || '' }}</text>
+`
