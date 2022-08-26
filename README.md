@@ -17,26 +17,88 @@
 * [unocss-webpack-uniapp2](https://github.com/MellowCo/unocss-webpack-uniapp2#unocss-webpack-uniapp2) - 兼容 UniApp Vue2 App开发插件
 * [uni-vue3-starter](https://github.com/MellowCo/uni-vue3-starter) - Uniapp-Vite 模版
 
-## 转换规则
-```js
-const transformRules = {
-  '.': '-d-',
-  '/': '-s-',
-  ':': '-c-',
-  '%': '-p-',
-  '!': '-e-',
-  '#': '-w-',
-  '(': '-bl-',
-  ')': '-br-',
-  '[': '-fl-',
-  ']': '-fr-',
-  '$': '-r-',
+## options
+```ts
+export interface Options {
+  /**
+   * 自定义转换规则
+   * @default
+   * {
+      '.': '-d-',
+      '/': '-s-',
+      ':': '-c-',
+      '%': '-p-',
+      '!': '-e-',
+      '#': '-w-',
+      '(': '-bl-',
+      ')': '-br-',
+      '[': '-fl-',
+      ']': '-fr-',
+      '$': '-r-',
+    }
+   */
+  rules?: Record<string, string>
+
+  /**
+   * 排除转换目标
+   * @default [/[\\/]node_modules[\\/]/, /[\\/]\.git[\\/]/]
+   */
+  exclude?: FilterPattern
+
+  /**
+   * 需要转换的目标
+   * @default [/\.[jt]sx?$/, /\.vue$/,  /\.vue\?vue/]
+   */
+  include?: FilterPattern
 }
+```
+
+### 自定义转换规则
+```ts
+// webpack
+// const transformWeClass =  require('unplugin-transform-we-class/webpack')
+// import transformWeClass from 'unplugin-transform-we-class/webpack'
+
+// vite
+import transformWeClass from 'unplugin-transform-we-class/vite'
+
+const myRules = {
+  '.': '-ddd-',
+  '/': '-ss-',
+  ':': '-cc-',
+  '%': '-pp-'
+}
+
+transformWeClass({
+  rules: myRules
+})
+```
+
+### 设置 exclude include
+```ts
+// webpack
+// const transformWeClass =  require('unplugin-transform-we-class/webpack')
+// import transformWeClass from 'unplugin-transform-we-class/webpack'
+
+// vite
+import transformWeClass from 'unplugin-transform-we-class/vite'
+
+transformWeClass({
+  exclude: [/[\\/]node_modules[\\/]/, /[\\/]\.git[\\/]/, /[\\/]my-folder[\\/]/],
+  include: [/\.vue$/, /\.vue\?vue/]
+})
+```
+
+
+
+## 工具方法导出
+```ts
+import { defaultRules, escapeRegExp, restoreSelector, transformEscapESelector, transformSelector } from 'unplugin-transform-we-class/utils'
 ```
 
 
 ## 使用
-[使用说明](https://github.com/MellowCo/unocss-preset-weapp#webpack)
+与 [unocss-preset-weapp](https://github.com/MellowCo/unocss-preset-weapp#webpack) 使用
 
 
 ## 示例
