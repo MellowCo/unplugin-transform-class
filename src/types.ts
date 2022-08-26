@@ -22,7 +22,7 @@ export interface Options {
 
   /**
    * 排除转换目标
-   * @default [/node_modules/, /\.git/]
+   * @default [/[\\/]node_modules[\\/]/, /[\\/]\.git[\\/]/]
    */
   exclude?: FilterPattern
 
