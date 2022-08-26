@@ -1,5 +1,5 @@
 import { trim } from '@meoc/utils'
-import { transformSelector } from '../utils'
+import { defaultRules, transformSelector } from '../utils'
 
 /**
  * 获取class
@@ -48,13 +48,13 @@ export function getArrClass(className: string) {
   return Array.from(className.matchAll(/(?<=[\?\:])\s*'(.*?)'/g)).map(v => v[1])
 }
 
-export function transformCode(code: string) {
+export function transformCode(code: string, rules = defaultRules) {
   const classNames = getClass(code)
 
   classNames.forEach((c) => {
     let currentClass = c[0]
     c.slice(1).forEach((selector) => {
-      currentClass = currentClass.replace(selector, transformSelector(selector))
+      currentClass = currentClass.replace(selector, transformSelector(selector, rules))
     })
     code = code.replace(c[0], currentClass)
   })

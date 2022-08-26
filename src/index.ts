@@ -8,13 +8,17 @@ const filter = createFilter(
   [/[\\/]node_modules[\\/]/, /[\\/]\.git[\\/]/],
 )
 
-export default createUnplugin<Options>(() => ({
-  name: 'unplugin-transform-we-class',
-  enforce: 'pre',
-  transformInclude(id) {
-    return filter(id)
-  },
-  transform(code) {
-    return transformCode(code)
-  },
-}))
+export default createUnplugin<Options>((options) => {
+  const rules = options.rules
+
+  return {
+    name: 'unplugin-transform-we-class',
+    enforce: 'pre',
+    transformInclude(id) {
+      return filter(id)
+    },
+    transform(code) {
+      return transformCode(code, rules)
+    },
+  }
+})

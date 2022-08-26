@@ -1,4 +1,4 @@
-const transformRules: Record<string, string> = {
+export const defaultRules: Record<string, string> = {
   '.': '-d-',
   '/': '-s-',
   ':': '-c-',
@@ -20,32 +20,32 @@ export function escapeRegExp(str: string) {
   return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 }
 
-export function transformSelector(selector: string) {
+export function transformSelector(selector: string, rules = defaultRules) {
   if (transformRegExp.test(selector)) {
-    for (const transformRule in transformRules) {
+    for (const transformRule in rules) {
       const replaceReg = new RegExp(`${escapePrefix}${transformRule}`, 'g')
-      selector = selector.replace(replaceReg, transformRules[transformRule])
+      selector = selector.replace(replaceReg, rules[transformRule])
     }
   }
 
   return selector
 }
 
-export function transformEscapESelector(selector: string) {
+export function transformEscapESelector(selector: string, rules = defaultRules) {
   // .bg-\[\#452233\]\:50 => .bg--fl--w-452233-fr--c-40-c-50
   if (transformRegExp.test(selector)) {
-    for (const transformRule in transformRules) {
+    for (const transformRule in rules) {
       const replaceReg = new RegExp(escapeRegExp(`${escapePrefix}${transformRule}`), 'g')
-      selector = selector.replace(replaceReg, transformRules[transformRule])
+      selector = selector.replace(replaceReg, rules[transformRule])
     }
   }
 
   return selector
 }
 
-export function restoreSelector(selector: string) {
-  for (const transformRule in transformRules) {
-    const replaceReg = new RegExp(transformRules[transformRule], 'g')
+export function restoreSelector(selector: string, rules = defaultRules) {
+  for (const transformRule in rules) {
+    const replaceReg = new RegExp(rules[transformRule], 'g')
     selector = selector.replace(replaceReg, transformRule)
   }
   return selector
