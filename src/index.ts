@@ -3,13 +3,13 @@ import { createFilter } from '@rollup/pluginutils'
 import type { Options } from './types'
 import { transformCode } from './core'
 
-const filter = createFilter(
-  [/\.[jt]sx?$/, /\.vue$/, /\.vue\?vue/],
-  [/[\\/]node_modules[\\/]/, /[\\/]\.git[\\/]/],
-)
-
 export default createUnplugin<Options>((options) => {
   const rules = options.rules
+
+  const filter = createFilter(
+    options.include || [/\.[jt]sx?$/, /\.vue$/, /\.vue\?vue/],
+    options.exclude || [/[\\/]node_modules[\\/]/, /[\\/]\.git[\\/]/],
+  )
 
   return {
     name: 'unplugin-transform-we-class',
