@@ -3,7 +3,7 @@ import { createFilter } from '@rollup/pluginutils'
 import type { Options } from './types'
 import { transformCode } from './core'
 
-export default createUnplugin<Options>((options) => {
+export default createUnplugin<Options>((options = {}) => {
   const rules = options.rules
 
   const filter = createFilter(
