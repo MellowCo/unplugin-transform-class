@@ -35,6 +35,7 @@ export interface Options {
       '[': '-fl-',
       ']': '-fr-',
       '$': '-r-',
+      ',': '-co-',
     }
    */
   rules?: Record<string, string>

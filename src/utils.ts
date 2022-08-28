@@ -10,6 +10,7 @@ export const defaultRules: Record<string, string> = {
   '[': '-fl-',
   ']': '-fr-',
   '$': '-r-',
+  ',': '-co-',
 }
 
 const transformRegExp = /[\.\/:%!#\(\)\[\]$]/
