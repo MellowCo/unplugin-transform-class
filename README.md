@@ -1,6 +1,7 @@
 # unplugin-transform-we-class
+[![Version](https://img.shields.io/npm/v/unplugin-transform-we-class.svg?style=flat-square&logo=npm) 
+![Downloads](https://img.shields.io/npm/dm/unplugin-transform-we-class.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/unplugin-transform-we-class)
 
-[![NPM version](https://img.shields.io/npm/v/unplugin-transform-we-class?color=a1b858&label=)](https://www.npmjs.com/package/unplugin-transform-we-class)
 
 > 使用该插件中转换 `微信小程序` 中不支持的 `\\`，`\:` `\[` `\$`  `\.` 等转义类名
 >
