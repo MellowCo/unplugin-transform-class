@@ -82,19 +82,19 @@
     "unplugin": "0.9.5"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.26.1",
-    "@types/node": "^18.7.13",
+    "@antfu/eslint-config": "^0.26.3",
+    "@types/node": "^18.7.16",
     "bumpp": "^8.2.1",
-    "eslint": "^8.22.0",
+    "eslint": "^8.23.0",
     "esno": "^0.16.3",
-    "fast-glob": "^3.2.11",
+    "fast-glob": "^3.2.12",
     "nodemon": "^2.0.19",
     "rimraf": "^3.0.2",
-    "rollup": "^2.78.1",
-    "tsup": "^6.2.2",
-    "typescript": "^4.8.2",
-    "vite": "^3.0.9",
-    "vitest": "^0.22.1",
+    "rollup": "^2.79.0",
+    "tsup": "^6.2.3",
+    "typescript": "^4.8.3",
+    "vite": "^3.1.0",
+    "vitest": "^0.23.2",
     "webpack": "^5.74.0"
   }
 }
