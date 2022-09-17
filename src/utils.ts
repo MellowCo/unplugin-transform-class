@@ -13,7 +13,7 @@ export const defaultRules: Record<string, string> = {
   ',': '-co-',
 }
 
-const transformRegExp = /[\.\/:%!#\(\)\[\]$]/
+const transformRegExp = /[,\.\/:%!#\(\)\[\]$]/
 
 const escapePrefix = '\\'
 
@@ -68,3 +68,5 @@ export function restoreSelector(selector: string, rules = defaultRules) {
   }
   return selector
 }
+
+export { transformCode } from './core'
