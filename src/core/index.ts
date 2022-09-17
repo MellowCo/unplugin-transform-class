@@ -44,7 +44,7 @@ export function getArrClass(className: string) {
   //   title === '2.3' ? 'font-$font-name bg-teal-200:55' :'tracking-[2/5]',
   //   isFont ? 'font-$font-name' : 'tracking-[2/5]'
   // ]
-  // => ['font-$font-name bg-teal-200:55', 'tracking-[2/5]','font-$font-name tracking-[2/5]']
+  // => ['font-$font-name bg-teal-200:55', 'tracking-[2/5]','font-$font-name', 'tracking-[2/5]']
   return Array.from(className.matchAll(/(?<=[\?\:])\s*'(.*?)'/g)).map(v => v[1])
 }
 
