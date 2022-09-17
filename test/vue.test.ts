@@ -14,6 +14,7 @@ const rules = {
   '[': '-flr-',
   ']': '-frr-',
   '$': '-rr-',
+  ',': '-ccc',
 }
 
 describe('vue', () => {

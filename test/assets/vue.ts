@@ -28,7 +28,7 @@ text-red-500:20
 </view>`
 
 export const vueCode = `<template>
-<view class="content">
+<view class="content,1 text">
   <view class="indent-1/2">
     indent-1/2
   </view>
