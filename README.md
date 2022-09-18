@@ -3,9 +3,11 @@
 ![Downloads](https://img.shields.io/npm/dm/unplugin-transform-we-class.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/unplugin-transform-we-class)
 
 
-> 使用该插件中转换 `微信小程序` 中不支持的 `\\`，`\:` `\[` `\$`  `\.` 等转义类名
->
-> 结合 [unocss 小程序预设](https://github.com/MellowCo/unocss-preset-weapp) ，实现 `unocss` 在小程序中开发使用
+> 该插件用于转换 `微信小程序` 不支持的 `\\`，`\:` `\[` `\$`  `\.` 等转义类名，实现在小程序中使用原子化css
+
+![](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202209181628083.png)
+
+> 例如结合 [unocss 小程序预设](https://github.com/MellowCo/unocss-preset-weapp) ，实现 `unocss` 在小程序中开发使用
 
 ![image-20220703141301371](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207031413496.png)
 
@@ -17,7 +19,7 @@
 * [unplugin-unocss-attributify-wechat](https://github.com/MellowCo/unplugin-unocss-attributify-wechat) - 小程序 Attributify Mode 插件
 * [unocss-webpack-uniapp2](https://github.com/MellowCo/unocss-webpack-uniapp2#unocss-webpack-uniapp2) - 兼容 UniApp Vue2 App开发插件
 * [uni-vue3-starter](https://github.com/MellowCo/uni-vue3-starter) - Uniapp-Vite 模版
-* 原子化css冲突问题，例 [tmui](https://tmui.design/) 内置 [原子化css](https://tmui.design/doc/CSSTool/css.html) 与 unocss 冲突问题，[解决方案](https://github.com/MellowCo/unplugin-unocss-attributify-wechat#%E5%8E%9F%E5%AD%90%E5%8C%96-css-%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98)
+* 原子化css冲突问题，例 [tmui](https://tmui.design/) 内置 [原子化css](https://tmui.design/doc/CSSTool/css.html) 与 unocss 冲突问题，[解决方案](https://github.com/MellowCo/unocss-preset-weapp#%E5%8E%9F%E5%AD%90%E5%8C%96-css-%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98)
 
 ## options
 ```ts
