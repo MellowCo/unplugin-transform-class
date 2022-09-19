@@ -12,7 +12,7 @@ export default createUnplugin<Options>((options = {}) => {
   )
 
   return {
-    name: 'unplugin-transform-we-class',
+    name: 'unplugin-transform-class',
     enforce: 'pre',
     transformInclude(id) {
       return filter(id)

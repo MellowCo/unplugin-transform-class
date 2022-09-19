@@ -1,15 +1,15 @@
 {
-  "name": "unplugin-transform-we-class",
+  "name": "unplugin-transform-class",
   "version": "0.1.19",
-  "description": "转换微信小程序中带有转义字符的class",
+  "description": "transform class by rule, support use in vite, rollup, webpack",
   "license": "MIT",
-  "homepage": "https://github.com/MellowCo/unplugin-transform-we-class#readme",
+  "homepage": "https://github.com/MellowCo/unplugin-transform-class#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MellowCo/unplugin-transform-we-class"
+    "url": "https://github.com/MellowCo/unplugin-transform-class"
   },
   "bugs": {
-    "url": "https://github.com/MellowCo/unplugin-transform-we-class/issues"
+    "url": "https://github.com/MellowCo/unplugin-transform-class/issues"
   },
   "keywords": [
     "unplugin",
