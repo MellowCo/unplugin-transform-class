@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import uni from '@dcloudio/vite-plugin-uni'
 import Unocss from 'unocss/vite'
 import presetWeapp from 'unocss-preset-weapp'
-import transformWeClass from 'unplugin-transform-we-class/vite'
+import transformWeClass from 'unplugin-transform-class/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({

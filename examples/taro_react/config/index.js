@@ -1,7 +1,7 @@
 /* eslint-disable import/no-commonjs */
 const UnoCSS = require('unocss/webpack').default
 const presetWeapp = require('unocss-preset-weapp').default
-const transformWeClass = require('unplugin-transform-we-class/webpack')
+const transformWeClass = require('unplugin-transform-class/webpack')
 
 const config = {
   projectName: 'taro_react',
