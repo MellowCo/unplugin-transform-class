@@ -4,20 +4,19 @@ unplugin-transform-class
 
 
 <p align='center'>
-<b>English</b> | <a href="https://github.com/MellowCo/unplugin-transform-class/blob/main/README.zh-CN.md">简体中文</a>
+<a href="https://github.com/MellowCo/unplugin-transform-class/blob/main/README.md">English</a> | <b>简体中文</b>
 </p>
-
 
 [![Version](https://img.shields.io/npm/v/unplugin-transform-we-class.svg?style=flat-square&logo=npm) 
 ![Downloads](https://img.shields.io/npm/dm/unplugin-transform-we-class.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/unplugin-transform-we-class)
 
-transfrom `html class` selector by custom rules 
+按照自定义转换规则， 转换 `html class` 选择器
 
-to fit the functional semantics，`unplugin-transform-we-class` rename to `unplugin-transform-class`
+为了贴合功能语义，`unplugin-transform-we-class` 改名为 `unplugin-transform-class`
 
 ---
 
-static class
+静态class
 
 ```html
 <view class="tracking-[2/5] bg-teal-200:55">
@@ -25,7 +24,7 @@ static class
 </view>
 ```
 
-setting rules
+设置rules
 
 ```js
 const rules = {
@@ -40,17 +39,17 @@ transformClass({
 })
 ```
 
-transfrom
+转换后
 
 ```html
-  <view class="tracking--fl-2-sr-5-fr- bg-teal-200-c-55">
-    tracking-[2/5]
-  </view>
+<view class="tracking--fl-2-sr-5-fr- bg-teal-200-c-55">
+  tracking-[2/5]
+</view>
 ```
 
 ---
 
-dynamic class
+动态复杂class
 
 ```html
 <view
@@ -69,18 +68,18 @@ dynamic class
 </view>
 ```
 
-transfrom
+转换后
 
 ```html
 
-  <view
-    :class="{'bg-blue-600-c-80': flag,'text-green-600-s-40': !flag}"
-  >
-    111111111
-  </view>
+<view
+  :class="{'bg-blue-600-c-80': flag,'text-green-600-s-40': !flag}"
+>
+  111111111
+</view>
 
 
-  <view
+<view
   :class="[
     flag ? 'bg-blue-600-s-40' : 'bg-blue-600-c-80',
     !flag ? 'text-yellow-800-s-80' : 'text-yellow-800-s-40',
@@ -92,7 +91,7 @@ transfrom
 
 
 
-## installation
+## 下载
 
 ```shell
 npm i unplugin-transform-class -D
@@ -136,13 +135,13 @@ module.exports = {
 <br></details>
 
 ---
-## usage
+## 如何使用
 
 ### options
 ```ts
 export interface Options {
   /**
-   * custom transform Rules
+   * 自定义转换规则
    * @default
    * {
       '.': '-d-',
@@ -162,13 +161,13 @@ export interface Options {
   rules?: Record<string, string>
 
   /**
-   * exclude
+   * 排除转换目标
    * @default [/[\\/]node_modules[\\/]/, /[\\/]\.git[\\/]/]
    */
   exclude?: FilterPattern
 
   /**
-   * include
+   * 需要转换的目标
    * @default [/\.[jt]sx?$/, /\.vue$/,  /\.vue\?vue/]
    */
   include?: FilterPattern
@@ -176,7 +175,7 @@ export interface Options {
 ```
 
 ---
-### custom transform Rules
+### 自定义转换规则
 
 ```ts
 // webpack
@@ -199,7 +198,7 @@ transformWeClass({
 ```
 
 ---
-### exclude include
+### 设置 exclude include
 ```ts
 // webpack
 // const transformClass =  require('unplugin-transform-class/webpack')
@@ -215,7 +214,7 @@ transformWeClass({
 ```
 
 ---
-### utils
+### 工具
 ```ts
 import { defaultRules, escapeRegExp, restoreSelector, transformCode, transformEscapESelector, transformSelector } from 'unplugin-transform-class/utils'
 
@@ -235,25 +234,24 @@ const newCode = transformCode(code, rules)
 ```
 
 ---
-## use case
+## 使用场景
 
-### use atomic css in miniprogram 
-
-> transfrom the escape class  not supported by miniprogram, like `\\`，`\:` `\[` `\$`  `\.` , implement the use of atomic css in miniprogram
+### 在微信小程序中使用原子化css
+> 用于转换 `微信小程序` 不支持的 `\\`，`\:` `\[` `\$`  `\.` 等转义类名， 实现在小程序中使用原子化css
 
 ![](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202209181628083.png)
 
-> for example use [the unocss preset for wechat miniprogram](https://github.com/MellowCo/unocss-preset-weapp), use unocss development miniprogram
+> 例如结合 [unocss 小程序预设](https://github.com/MellowCo/unocss-preset-weapp) ，实现 `unocss` 在小程序中开发使用
 
 ![image-20220703141301371](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207031413496.png)
 
 
+相关链接
 
-related links
-* [UnoCSS](https://github.com/unocss/unocss) - the instant on-demand atomic css engine.
-* [unocss-preset-weapp](https://github.com/MellowCo/unocss-preset-weapp) - the unocss preset for wechat miniprogram.
-* [unplugin-transform-class](https://github.com/MellowCo/unplugin-transform-class) - transform class plugin, support use in vite, rollup, webpack
-* [unplugin-unocss-attributify-wechat](https://github.com/MellowCo/unplugin-attributify-to-class) - css attributify mode to class, support use in vite, rollup, webpack
-* [unocss-webpack-uniapp2](https://github.com/MellowCo/unocss-webpack-uniapp2#unocss-webpack-uniapp2) - compatible uniApp vue2 app plugin by unocss
-* [uni-vue3-starter](https://github.com/MellowCo/uni-vue3-starter) - uniapp-vite template
-* atomic css conflict problem，like [tmui](https://tmui.design/) built-in [atomic css](https://tmui.design/doc/CSSTool/css.html) conflict with unocss，[solution](https://github.com/MellowCo/unocss-preset-weapp#%E5%8E%9F%E5%AD%90%E5%8C%96-css-%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98)
+* [UnoCSS](https://github.com/unocss/unocss) - 即时按需原子css引擎
+* [unocss-preset-weapp](https://github.com/MellowCo/unocss-preset-weapp) - unocss 小程序预设
+* [unplugin-transform-class](https://github.com/MellowCo/unplugin-transform-class) - class 转换插件
+* [unplugin-unocss-attributify-wechat](https://github.com/MellowCo/unplugin-attributify-to-class) -  attributify mode to class 插件
+* [unocss-webpack-uniapp2](https://github.com/MellowCo/unocss-webpack-uniapp2#unocss-webpack-uniapp2) - 兼容 uniApp vue2 app 开发插件
+* [uni-vue3-starter](https://github.com/MellowCo/uni-vue3-starter) - Uniapp-Vite 模版
+* 原子化css冲突问题，例 [tmui](https://tmui.design/) 内置 [原子化css](https://tmui.design/doc/CSSTool/css.html) 与 unocss 冲突问题，[解决方案](https://github.com/MellowCo/unocss-preset-weapp#%E5%8E%9F%E5%AD%90%E5%8C%96-css-%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98)
