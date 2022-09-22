@@ -206,9 +206,23 @@ transformWeClass({
 ```
 
 ---
-### 工具方法导出
+### 工具
 ```ts
-import { defaultRules, escapeRegExp, restoreSelector, transformEscapESelector, transformSelector } from 'unplugin-transform-class/utils'
+import { defaultRules, escapeRegExp, restoreSelector, transformCode, transformEscapESelector, transformSelector } from 'unplugin-transform-class/utils'
+
+const code = `
+<view class="tracking-[2/5] bg-teal-200:55">
+  tracking-[2/5]
+</view>`
+
+const rules = {
+  '/': '-s-',
+  ':': '-c-',
+  '[': '-fl-',
+  ']': '-fr-',
+}
+
+const newCode = transformCode(code, rules)
 ```
 
 ---
