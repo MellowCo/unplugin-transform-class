@@ -49,6 +49,10 @@ text-red-500:20
 </view>"
 `;
 
+exports[`vue > restoreSelector 1`] = `""`;
+
+exports[`vue > restoreSelector 2`] = `"tracking-[2/5]"`;
+
 exports[`vue > transform rules 1`] = `
 "<template>
 <view class=\\"content-ccc1 text\\">

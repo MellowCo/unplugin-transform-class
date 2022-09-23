@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { getArrClass, getClass, getObjClass, transformCode } from '../src/core'
+import { restoreSelector } from '../src/utils'
 import { firstUI, getArrClassCode, getClassCode, getObjClassCode1, getObjClassCode2, replaceAllCode, tmText, vueCode, vueCode2, vueCode3, vueCode4, vueCode5 } from './assets/vue'
 
 const rules = {
@@ -54,5 +55,10 @@ describe('vue', () => {
     expect(transformCode(vueCode5, rules)).toMatchSnapshot()
     expect(transformCode(tmText, rules)).toMatchSnapshot()
     expect(transformCode(firstUI, rules)).toMatchSnapshot()
+  })
+
+  it('restoreSelector', () => {
+    expect(restoreSelector(undefined, rules)).toMatchSnapshot()
+    expect(restoreSelector('tracking--flr-2-sr-5-frr-', rules)).toMatchSnapshot()
   })
 })
