@@ -17,7 +17,7 @@ const transformRegExp = /[,\.\/:%!#\(\)\[\]$]/
 
 const escapePrefix = '\\'
 
-export function escapeRegExp(str: string) {
+export function escapeRegExp(str = '') {
   return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 }
 
@@ -27,7 +27,7 @@ export function escapeRegExp(str: string) {
  * @param rules 转换规则
  * @example .bg-[#452233]:50 => .bg--fl--w-452233-fr--c-40-c-50
  */
-export function transformSelector(selector: string, rules = defaultRules) {
+export function transformSelector(selector = '', rules = defaultRules) {
   if (transformRegExp.test(selector)) {
     for (const transformRule in rules) {
       const replaceReg = new RegExp(`${escapePrefix}${transformRule}`, 'g')
@@ -44,7 +44,7 @@ export function transformSelector(selector: string, rules = defaultRules) {
  * @param rules 转换规则
  * @example .bg-\[\#452233\]\:50 => .bg--fl--w-452233-fr--c-40-c-50
  */
-export function transformEscapESelector(selector: string, rules = defaultRules) {
+export function transformEscapESelector(selector = '', rules = defaultRules) {
   if (transformRegExp.test(selector)) {
     for (const transformRule in rules) {
       const replaceReg = new RegExp(escapeRegExp(`${escapePrefix}${transformRule}`), 'g')
@@ -61,7 +61,7 @@ export function transformEscapESelector(selector: string, rules = defaultRules) 
  * @param rules 转换规则
  * @example .bg--fl--w-452233-fr--c-40-c-50 => .bg-[#452233]:50
  */
-export function restoreSelector(selector: string, rules = defaultRules) {
+export function restoreSelector(selector = '', rules = defaultRules) {
   for (const transformRule in rules) {
     const replaceReg = new RegExp(rules[transformRule], 'g')
     selector = selector.replace(replaceReg, transformRule)
