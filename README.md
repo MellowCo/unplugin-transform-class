@@ -239,11 +239,11 @@ const newCode = transformCode(code, rules)
 
 ### use atomic css in miniprogram 
 
-> transfrom the escape class  not supported by miniprogram, like `\\`，`\:` `\[` `\$`  `\.` , implement the use of atomic css in miniprogram
+> transfrom the escape class  not supported by miniprogram, like `\\`，`\:` `\[` `\$`  `\.` , implement the atomic css in miniprogram
 
 ![](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202209181628083.png)
 
-> for example use [the unocss preset for wechat miniprogram](https://github.com/MellowCo/unocss-preset-weapp), use unocss development miniprogram
+> for example use [unocss-preset-weapp](https://github.com/MellowCo/unocss-preset-weapp), use unocss development in miniprogram
 
 ![image-20220703141301371](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207031413496.png)
 
