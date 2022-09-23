@@ -13,12 +13,14 @@ export const defaultRules: Record<string, string> = {
   ',': '-co-',
 }
 
-const transformRegExp = /[,\.\/:%!#\(\)\[\]$]/
-
 const escapePrefix = '\\'
 
 export function escapeRegExp(str = '') {
   return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+}
+
+function createTransformRegExp(rules: Record<string, string>) {
+  return new RegExp(`[${escapeRegExp(Object.keys(rules).join(''))}]`)
 }
 
 /**
@@ -28,6 +30,8 @@ export function escapeRegExp(str = '') {
  * @example .bg-[#452233]:50 => .bg--fl--w-452233-fr--c-40-c-50
  */
 export function transformSelector(selector = '', rules = defaultRules) {
+  const transformRegExp = createTransformRegExp(rules)
+
   if (transformRegExp.test(selector)) {
     for (const transformRule in rules) {
       const replaceReg = new RegExp(`${escapePrefix}${transformRule}`, 'g')
@@ -45,6 +49,8 @@ export function transformSelector(selector = '', rules = defaultRules) {
  * @example .bg-\[\#452233\]\:50 => .bg--fl--w-452233-fr--c-40-c-50
  */
 export function transformEscapESelector(selector = '', rules = defaultRules) {
+  const transformRegExp = createTransformRegExp(rules)
+
   if (transformRegExp.test(selector)) {
     for (const transformRule in rules) {
       const replaceReg = new RegExp(escapeRegExp(`${escapePrefix}${transformRule}`), 'g')
