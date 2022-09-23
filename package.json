@@ -79,10 +79,10 @@
   "dependencies": {
     "@meoc/utils": "^0.1.8",
     "@rollup/pluginutils": "^4.2.1",
-    "unplugin": "0.9.5"
+    "unplugin": "0.9.6"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.26.3",
+    "@antfu/eslint-config": "^0.27.0",
     "@types/node": "^18.7.18",
     "bumpp": "^8.2.1",
     "eslint": "^8.23.1",
@@ -90,11 +90,11 @@
     "fast-glob": "^3.2.12",
     "nodemon": "^2.0.20",
     "rimraf": "^3.0.2",
-    "rollup": "^2.79.0",
+    "rollup": "^2.79.1",
     "tsup": "^6.2.3",
     "typescript": "^4.8.3",
-    "vite": "^3.1.2",
-    "vitest": "^0.23.2",
+    "vite": "^3.1.3",
+    "vitest": "^0.23.4",
     "webpack": "^5.74.0"
   }
 }
