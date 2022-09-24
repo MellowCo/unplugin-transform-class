@@ -250,10 +250,4 @@ const newCode = transformCode(code, rules)
 
 
 related links
-* [UnoCSS](https://github.com/unocss/unocss) - the instant on-demand atomic css engine.
 * [unocss-preset-weapp](https://github.com/MellowCo/unocss-preset-weapp) - the unocss preset for wechat miniprogram.
-* [unplugin-transform-class](https://github.com/MellowCo/unplugin-transform-class) - transform class plugin, support use in vite, rollup, webpack
-* [unplugin-unocss-attributify-wechat](https://github.com/MellowCo/unplugin-attributify-to-class) - css attributify mode to class, support use in vite, rollup, webpack
-* [unocss-webpack-uniapp2](https://github.com/MellowCo/unocss-webpack-uniapp2#unocss-webpack-uniapp2) - compatible uniApp vue2 app plugin by unocss
-* [uni-vue3-starter](https://github.com/MellowCo/uni-vue3-starter) - uniapp-vite template
-* atomic css conflict problem，like [tmui](https://tmui.design/) built-in [atomic css](https://tmui.design/doc/CSSTool/css.html) conflict with unocss，[solution](https://github.com/MellowCo/unocss-preset-weapp#%E5%8E%9F%E5%AD%90%E5%8C%96-css-%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98)
