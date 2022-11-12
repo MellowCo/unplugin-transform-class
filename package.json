@@ -1,6 +1,6 @@
 {
   "name": "unplugin-transform-class",
-  "version": "0.1.20",
+  "version": "0.2.0",
   "description": "transform class by rule, support use in vite, rollup, webpack",
   "license": "MIT",
   "homepage": "https://github.com/MellowCo/unplugin-transform-class#readme",
