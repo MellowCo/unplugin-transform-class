@@ -39,9 +39,9 @@ transformClass({
 transfrom
 
 ```html
-  <view class="tracking--fl-2-sr-5-fr- bg-teal-200-c-55">
-    tracking-[2/5]
-  </view>
+<view class="tracking--fl-2-s-5-fr- bg-teal-200-c-55">
+  tracking-[2/5]
+</view>
 ```
 
 ---
@@ -69,11 +69,11 @@ transfrom
 
 ```html
 
-  <view
-    :class="{'bg-blue-600-c-80': flag,'text-green-600-s-40': !flag}"
-  >
-    111111111
-  </view>
+<view
+  :class="{'bg-blue-600-c-80': flag,'text-green-600-s-40': !flag}"
+>
+  111111111
+</view>
 
 
   <view
