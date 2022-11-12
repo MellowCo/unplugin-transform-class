@@ -47,7 +47,6 @@ describe('vue', () => {
     expect(transformCode(tmText)).toMatchSnapshot()
     expect(transformCode(firstUI)).toMatchSnapshot()
     expect(transformCode(equalCode)).toMatchSnapshot()
-
   })
 
   it('transform rules', () => {
