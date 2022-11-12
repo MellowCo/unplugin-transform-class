@@ -7,10 +7,6 @@ unplugin-transform-class
 <b>English</b> | <a href="https://github.com/MellowCo/unplugin-transform-class/blob/main/README.zh-CN.md">简体中文</a>
 </p>
 
-
-[![Version](https://img.shields.io/npm/v/unplugin-transform-we-class.svg?style=flat-square&logo=npm) 
-![Downloads](https://img.shields.io/npm/dm/unplugin-transform-we-class.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/unplugin-transform-we-class)
-
 transfrom `html class` selector by custom rules 
 
 to fit the functional semantics，`unplugin-transform-we-class` rename to `unplugin-transform-class`
@@ -145,18 +141,19 @@ export interface Options {
    * custom transform Rules
    * @default
    * {
-      '.': '-d-',
-      '/': '-s-',
-      ':': '-c-',
-      '%': '-p-',
-      '!': '-e-',
-      '#': '-w-',
-      '(': '-bl-',
-      ')': '-br-',
-      '[': '-fl-',
-      ']': '-fr-',
-      '$': '-r-',
-      ',': '-co-',
+      '.': '-dl-',
+      '/': '-sl-',
+      ':': '-cl-',
+      '%': '-pes-',
+      '!': '-el-',
+      '#': '-wn-',
+      '(': '-lbl-',
+      ')': '-lbr-',
+      '[': '-lfl-',
+      ']': '-lfr-',
+      '$': '-do-',
+      ',': '-lco-',
+      '=': '-eqe-',
     }
    */
   rules?: Record<string, string>

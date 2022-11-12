@@ -7,9 +7,6 @@ unplugin-transform-class
 <a href="https://github.com/MellowCo/unplugin-transform-class/blob/main/README.md">English</a> | <b>简体中文</b>
 </p>
 
-[![Version](https://img.shields.io/npm/v/unplugin-transform-we-class.svg?style=flat-square&logo=npm) 
-![Downloads](https://img.shields.io/npm/dm/unplugin-transform-we-class.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/unplugin-transform-we-class)
-
 按照自定义转换规则， 转换 `html class` 选择器
 
 为了贴合功能语义，`unplugin-transform-we-class` 改名为 `unplugin-transform-class`
@@ -144,18 +141,19 @@ export interface Options {
    * 自定义转换规则
    * @default
    * {
-      '.': '-d-',
-      '/': '-s-',
-      ':': '-c-',
-      '%': '-p-',
-      '!': '-e-',
-      '#': '-w-',
-      '(': '-bl-',
-      ')': '-br-',
-      '[': '-fl-',
-      ']': '-fr-',
-      '$': '-r-',
-      ',': '-co-',
+      '.': '-dl-',
+      '/': '-sl-',
+      ':': '-cl-',
+      '%': '-pes-',
+      '!': '-el-',
+      '#': '-wn-',
+      '(': '-lbl-',
+      ')': '-lbr-',
+      '[': '-lfl-',
+      ']': '-lfr-',
+      '$': '-do-',
+      ',': '-lco-',
+      '=': '-eqe-',
     }
    */
   rules?: Record<string, string>

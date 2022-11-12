@@ -44,7 +44,7 @@ exports[`vue > getObjClass 2`] = `
 `;
 
 exports[`vue > replaceAll 1`] = `
-"<view class=\\"text-red-500-c-20  bg-blue-200-c-20 bg--fl--w-333-fr--s-50 bg--fl--w-999-fr--s-50\\">
+"<view class=\\"text-red-500-cl-20  bg-blue-200-cl-20 bg--lfl--wn-333-lfr--sl-50 bg--lfl--wn-999-lfr--sl-50\\">
 text-red-500:20
 </view>"
 `;
@@ -226,46 +226,40 @@ bg ==
 </view>"
 `;
 
-exports[`vue > transform rules 9`] = `
-"<view class=\\"bg--fl-url-bl-https-c--s--s-img-d-cdn-d-sugarat-d-top-s-mdImg-s-MTY2ODA4OTc3MjcyMg-eqe--eqe-unocss-icon-gray-d-svg-br--fr-\\">
-bg ==
-</view>"
-`;
-
 exports[`vue > transformCode 1`] = `
 "<template>
-<view class=\\"content-co-1 text\\">
-  <view class=\\"indent-1-s-2\\">
+<view class=\\"content-lco-1 text\\">
+  <view class=\\"indent-1-sl-2\\">
     indent-1/2
   </view>
-  <view class=\\"font--fl-system-ui-fr- bg-teal-200-c-55\\">
+  <view class=\\"font--lfl-system-ui-lfr- bg-teal-200-cl-55\\">
     font-[system-ui]
   </view>
-  <view class=\\"font--r-font-name\\">
+  <view class=\\"font--do-font-name\\">
     font-$font-name
   </view>
 
-  <view class=\\"font--r-font-name\\" :class=\\"[title === '2.3' ? 'font--r-font-name bg-teal-200-c-55' : 'tracking--fl-2-s-5-fr-',isFont ? 'font--r-font-name' : 'tracking--fl-2-s-5-fr-']\\">
+  <view class=\\"font--do-font-name\\" :class=\\"[title === '2.3' ? 'font--do-font-name bg-teal-200-cl-55' : 'tracking--lfl-2-sl-5-lfr-',isFont ? 'font--do-font-name' : 'tracking--lfl-2-sl-5-lfr-']\\">
     [title === '2.3' ? 'font-$font-name bg-teal-200:55' : 'tracking-[2/5]',isFont ? 'font-$font-name' : 'tracking-[2/5]']
   </view>
 
-  <view :class=\\"{ 'bg-teal-200-c-55': title === 'Hello', 'h-1-d-000-p-': title === 'Hello', 'font--r-font-name': isFont }\\">
+  <view :class=\\"{ 'bg-teal-200-cl-55': title === 'Hello', 'h-1-dl-000-pes-': title === 'Hello', 'font--do-font-name': isFont }\\">
     { 'bg-teal-200:55': title === 'Hello', 'h-1.000%': title === 'Hello', 'font-$font-name': isFont }
   </view>
 
-  <view class=\\"tracking--fl-2-s-5-fr- bg-teal-200-c-55\\">
+  <view class=\\"tracking--lfl-2-sl-5-lfr- bg-teal-200-cl-55\\">
     tracking-[2/5]
   </view>
 
-  <view class=\\"h-1-d-000-p-\\">
+  <view class=\\"h-1-dl-000-pes-\\">
     h-1.000%
   </view>
 
-  <view class=\\"h-1-d-000-p-\\">
+  <view class=\\"h-1-dl-000-pes-\\">
   h-1.000%
 </view>
 
-  <view class=\\"bg-teal-200-c-55\\">
+  <view class=\\"bg-teal-200-cl-55\\">
     bg-teal-200:55
   </view>
   <image class=\\"logo\\" src=\\"/static/logo.png\\" />
@@ -288,15 +282,15 @@ exports[`vue > transformCode 2`] = `
 
   <view
     :class=\\"{
-      'bg-blue-600-c-80': flag,
-      'text-green-600-s-40': !flag,
+      'bg-blue-600-cl-80': flag,
+      'text-green-600-sl-40': !flag,
     }\\"
   >
     111111111
   </view>
 
   <view
-    :class=\\"{'bg-blue-600-c-80': flag,'text-green-600-s-40': !flag}\\"
+    :class=\\"{'bg-blue-600-cl-80': flag,'text-green-600-sl-40': !flag}\\"
   >
     111111111
   </view>
@@ -304,8 +298,8 @@ exports[`vue > transformCode 2`] = `
 
   <view
   :class=\\"[
-    flag ? 'bg-blue-600-s-40' : 'bg-blue-600-c-80',
-    !flag ? 'text-yellow-800-s-80' : 'text-yellow-800-s-40',
+    flag ? 'bg-blue-600-sl-40' : 'bg-blue-600-cl-80',
+    !flag ? 'text-yellow-800-sl-80' : 'text-yellow-800-sl-40',
   ]\\"
 >
   111111111
@@ -313,8 +307,8 @@ exports[`vue > transformCode 2`] = `
 
 <view
   :class=\\"[
-    flag ? 'bg-blue-600-s-40' : 'bg-blue-600-c-80',
-    !flag ? 'text-yellow-800-s-80' : 'text-yellow-800-s-40',
+    flag ? 'bg-blue-600-sl-40' : 'bg-blue-600-cl-80',
+    !flag ? 'text-yellow-800-sl-80' : 'text-yellow-800-sl-40',
   ]\\"
 >
   111111111
@@ -395,4 +389,10 @@ exports[`vue > transformCode 7`] = `
 <text :style=\\"{ color: color, fontSize: getSize, fontWeight: fontWeight}\\" class=\\"fui-icon\\" :class=\\"[!color && !primary?'fui-icon__color':'',primary && !color?'fui-icon__active-color':'',disabled?'fui-icon__not-allowed':'',customPrefix,customPrefix?name:'']\\"
 @click=\\"handleClick\\">{{ icons[name] || '' }}</text>
 "
+`;
+
+exports[`vue > transformCode 8`] = `
+"<view class=\\"bg--lfl-url-lbl-https-cl--sl--sl-img-dl-cdn-dl-sugarat-dl-top-sl-mdImg-sl-MTY2ODA4OTc3MjcyMg-eqe--eqe-unocss-icon-gray-dl-svg-lbr--lfr-\\">
+bg ==
+</view>"
 `;
