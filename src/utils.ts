@@ -11,6 +11,7 @@ export const defaultRules: Record<string, string> = {
   ']': '-fr-',
   '$': '-r-',
   ',': '-co-',
+  '=': '-eqe-',
 }
 
 const escapePrefix = '\\'

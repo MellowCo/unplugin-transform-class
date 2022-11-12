@@ -53,6 +53,8 @@ exports[`vue > restoreSelector 1`] = `""`;
 
 exports[`vue > restoreSelector 2`] = `"tracking-[2/5]"`;
 
+exports[`vue > restoreSelector 3`] = `"bg-[url(https://img.cdn.sugarat.top/mdImg/MTY2ODA4OTc3MjcyMg==unocss-icon-gray.svg)]"`;
+
 exports[`vue > transform rules 1`] = `
 "<template>
 <view class=\\"content-ccc1 text\\">
@@ -216,6 +218,18 @@ exports[`vue > transform rules 7`] = `
 <text :style=\\"{ color: color, fontSize: getSize, fontWeight: fontWeight}\\" class=\\"fui-icon\\" :class=\\"[!color && !primary?'fui-icon__color':'',primary && !color?'fui-icon__active-color':'',disabled?'fui-icon__not-allowed':'',customPrefix,customPrefix?name:'']\\"
 @click=\\"handleClick\\">{{ icons[name] || '' }}</text>
 "
+`;
+
+exports[`vue > transform rules 8`] = `
+"<view class=\\"bg--flr-url-blr-https-cr--sr--sr-img-dr-cdn-dr-sugarat-dr-top-sr-mdImg-sr-MTY2ODA4OTc3MjcyMg-eqq--eqq-unocss-icon-gray-dr-svg-brr--frr-\\">
+bg ==
+</view>"
+`;
+
+exports[`vue > transform rules 9`] = `
+"<view class=\\"bg--fl-url-bl-https-c--s--s-img-d-cdn-d-sugarat-d-top-s-mdImg-s-MTY2ODA4OTc3MjcyMg-eqe--eqe-unocss-icon-gray-d-svg-br--fr-\\">
+bg ==
+</view>"
 `;
 
 exports[`vue > transformCode 1`] = `

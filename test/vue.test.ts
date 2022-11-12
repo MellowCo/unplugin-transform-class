@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { getArrClass, getClass, getObjClass, transformCode } from '../src/core'
-import { restoreSelector } from '../src/utils'
-import { firstUI, getArrClassCode, getClassCode, getObjClassCode1, getObjClassCode2, replaceAllCode, tmText, vueCode, vueCode2, vueCode3, vueCode4, vueCode5 } from './assets/vue'
+import { restoreSelector, defaultRules } from '../src/utils'
+import { equalCode, firstUI, getArrClassCode, getClassCode, getObjClassCode1, getObjClassCode2, replaceAllCode, tmText, vueCode, vueCode2, vueCode3, vueCode4, vueCode5 } from './assets/vue'
 
 const rules = {
   '.': '-dr-',
@@ -16,6 +16,7 @@ const rules = {
   ']': '-frr-',
   '$': '-rr-',
   ',': '-ccc',
+  '=': '-eqq-',
 }
 
 describe('vue', () => {
@@ -55,10 +56,13 @@ describe('vue', () => {
     expect(transformCode(vueCode5, rules)).toMatchSnapshot()
     expect(transformCode(tmText, rules)).toMatchSnapshot()
     expect(transformCode(firstUI, rules)).toMatchSnapshot()
+    expect(transformCode(equalCode, rules)).toMatchSnapshot()
+    expect(transformCode(equalCode, defaultRules)).toMatchSnapshot()
   })
 
   it('restoreSelector', () => {
     expect(restoreSelector(undefined, rules)).toMatchSnapshot()
     expect(restoreSelector('tracking--flr-2-sr-5-frr-', rules)).toMatchSnapshot()
+    expect(restoreSelector('bg--flr-url-blr-https-cr--sr--sr-img-dr-cdn-dr-sugarat-dr-top-sr-mdImg-sr-MTY2ODA4OTc3MjcyMg-eqq--eqq-unocss-icon-gray-dr-svg-brr--frr-', rules)).toMatchSnapshot()
   })
 })

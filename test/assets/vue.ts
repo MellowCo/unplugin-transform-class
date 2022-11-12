@@ -184,3 +184,11 @@ export const firstUI = `
 <text :style="{ color: color, fontSize: getSize, fontWeight: fontWeight}" class="fui-icon" :class="[!color && !primary?'fui-icon__color':'',primary && !color?'fui-icon__active-color':'',disabled?'fui-icon__not-allowed':'',customPrefix,customPrefix?name:'']"
 @click="handleClick">{{ icons[name] || '' }}</text>
 `
+
+/**
+ * = => \= error
+ * 等号转义
+ */
+export const equalCode = `<view class="bg-[url(https://img.cdn.sugarat.top/mdImg/MTY2ODA4OTc3MjcyMg==unocss-icon-gray.svg)]">
+bg ==
+</view>`
