@@ -119,14 +119,14 @@ exports[`react > getClass 1`] = `
 
 exports[`react > transformCode 1`] = `
 "<View className='content'>
-<View className='indent-1-sl-2'> indent-1/2 </View>
-<View className='font--lfl-system-ui-lfr- bg-teal-200-cl-55'> font-[system-ui] </View>
-<View className='font--do-font-name'> font-$font-name </View>
+<View className='indent-1_sl_2'> indent-1/2 </View>
+<View className='font-_lfl_system-ui_lfr_ bg-teal-200_cl_55'> font-[system-ui] </View>
+<View className='font-_do_font-name'> font-$font-name </View>
 
-<View className='tracking--lfl-2-sl-5-lfr- bg-teal-200-cl-55'> tracking-[2/5] </View>
-<View className='h-1-dl-000-pes-'> h-1.000% </View>
+<View className='tracking-_lfl_2_sl_5_lfr_ bg-teal-200_cl_55'> tracking-[2/5] </View>
+<View className='h-1_dl_000_pes_'> h-1.000% </View>
 
-<View className='bg-teal-200-cl-55'> bg-teal-200:55 </View>
+<View className='bg-teal-200_cl_55'> bg-teal-200:55 </View>
 <View className='text-area'>
 
 </View>
@@ -135,11 +135,11 @@ exports[`react > transformCode 1`] = `
 text-gray-500
 </View>
 
-<View className='text-gray-500-cl-50'>
+<View className='text-gray-500_cl_50'>
 text-gray-500
 </View>
 
-<View className='text-gray-500-sl-50'>
+<View className='text-gray-500_sl_50'>
 text-gray-500
 </View>
 
@@ -147,11 +147,11 @@ text-gray-500
 text-red-500
 </View>
 
-<View className='text-red-500-cl-50'>
+<View className='text-red-500_cl_50'>
 text-red-500
 </View>
 
-<View className='text-red-500-sl-50'>
+<View className='text-red-500_sl_50'>
 text-red-500
 </View>
 
@@ -159,11 +159,11 @@ text-red-500
 text-yellow-500
 </View>
 
-<View className='text-yellow-500-cl-50'>
+<View className='text-yellow-500_cl_50'>
 text-yellow-500
 </View>
 
-<View className='text-yellow-500-sl-50'>
+<View className='text-yellow-500_sl_50'>
 text-yellow-500
 </View>
 
@@ -171,11 +171,11 @@ text-yellow-500
 text-blue-500
 </View>
 
-<View className='text-blue-500-sl-50'>
+<View className='text-blue-500_sl_50'>
 text-blue-500
 </View>
 
-<View className='text-blue-500-cl-50'>
+<View className='text-blue-500_cl_50'>
 text-blue-500
 </View>
 
@@ -183,11 +183,11 @@ text-blue-500
 text-green-500
 </View>
 
-<View className='text-green-500-cl-50'>
+<View className='text-green-500_cl_50'>
 text-green-500
 </View>
 
-<View className='text-green-500-sl-50'>
+<View className='text-green-500_sl_50'>
 text-green-500
 </View>
 
@@ -195,19 +195,19 @@ text-green-500
 c-hex-157
 </View>
 
-<View className='c-hex-157-sl-60'>
+<View className='c-hex-157_sl_60'>
 c-hex-157
 </View>
 
-<View className='c--lfl--wn-157-lfr--sl-60'>
+<View className='c-_lfl__wn_157_lfr__sl_60'>
 c-[#157]
 </View>
 
-<View className='c--lfl--wn-157-lfr-_60'>
+<View className='c-_lfl__wn_157_lfr__60'>
 c-[#157]
 </View>
 
-<View className='c--lfl--wn-157-lfr--cl-60'>
+<View className='c-_lfl__wn_157_lfr__cl_60'>
 c-[#157]
 </View>
 </View>"
