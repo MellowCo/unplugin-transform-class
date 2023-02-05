@@ -77,24 +77,24 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@meoc/utils": "^0.2.0",
+    "@meoc/utils": "^0.2.2",
     "@rollup/pluginutils": "^5.0.2",
-    "unplugin": "1.0.0"
+    "unplugin": "1.0.1"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.31.0",
-    "@types/node": "^18.11.9",
+    "@antfu/eslint-config": "^0.35.1",
+    "@types/node": "^18.11.19",
     "bumpp": "^8.2.1",
-    "eslint": "^8.28.0",
+    "eslint": "^8.33.0",
     "esno": "^0.16.3",
     "fast-glob": "^3.2.12",
     "nodemon": "^2.0.20",
-    "rimraf": "^3.0.2",
-    "rollup": "^3.4.0",
+    "rimraf": "^4.1.2",
+    "rollup": "^3.14.0",
     "tsup": "^6.5.0",
-    "typescript": "^4.9.3",
-    "vite": "^3.2.4",
-    "vitest": "^0.25.3",
+    "typescript": "^4.9.5",
+    "vite": "^4.1.1",
+    "vitest": "^0.28.4",
     "webpack": "^5.75.0"
   }
 }
