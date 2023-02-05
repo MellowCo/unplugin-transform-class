@@ -7,7 +7,7 @@ import { defaultRules, transformSelector } from '../utils'
 export function getClass(code: string) {
   const matchs: string[][] = []
   // vue
-  Array.from(code.matchAll(/\s:?class="((?:\n|.)*?)"/g)).forEach((m) => {
+  Array.from(code.matchAll(/\s:?class="((?:[\s\S])*?)"/g)).forEach((m) => {
     const classStr = m[1]
     const sourceStr = trim(m[0])
 
@@ -27,7 +27,7 @@ export function getClass(code: string) {
     matchs.push(classArr)
   })
   // react jsx tsx
-  Array.from(code.matchAll(/className=["']((?:\n|.)+?)["']/g)).forEach((m) => {
+  Array.from(code.matchAll(/className=["']((?:[\s\S])+?)["']/g)).forEach((m) => {
     matchs.push([m[0], m[1]])
   })
   return matchs
