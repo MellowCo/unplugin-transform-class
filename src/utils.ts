@@ -76,4 +76,4 @@ export function restoreSelector(selector = '', rules = defaultRules) {
   return selector
 }
 
-export { transformCode } from './core'
+export { transformCode, getClass } from './core'
