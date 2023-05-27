@@ -7,14 +7,16 @@
  */
 import { describe, expect, it } from 'vitest'
 import { getClass, transformCode } from '../src/core'
-import { reactCode } from './assets/react'
+import { dynamicCode, reactCode } from './assets/react'
 
 describe('react', () => {
   it('getClass', () => {
     expect(getClass(reactCode)).toMatchSnapshot()
+    expect(getClass(dynamicCode)).toMatchSnapshot()
   })
 
   it('transformCode', () => {
     expect(transformCode(reactCode)).toMatchSnapshot()
+    expect(transformCode(dynamicCode)).toMatchSnapshot()
   })
 })

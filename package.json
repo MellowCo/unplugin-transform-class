@@ -75,7 +75,8 @@
     "prepublishOnly": "npm run build",
     "release": "bumpp --commit --push --tag && npm publish",
     "start": "esno src/index.ts",
-    "test": "vitest"
+    "test": "vitest",
+    "test:react": "vitest react"
   },
   "dependencies": {
     "@meoc/utils": "^0.2.4",
