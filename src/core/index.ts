@@ -28,12 +28,12 @@ export function getClass(code: string) {
   })
 
   // react className="xxxx"
-  Array.from(code.matchAll(/className=["']([\s\S]+?)["']/g)).forEach((m) => {
+  Array.from(code.matchAll(/className=["']([\s\S]*?)["']/g)).forEach((m) => {
     matchs.push([m[0], m[1]])
   })
 
   // className={xxxx}
-  Array.from(code.matchAll(/className=[{]([\s\S]+?)[}]/g)).forEach((m) => {
+  Array.from(code.matchAll(/className=[{]([\s\S]*?)[}]/g)).forEach((m) => {
     matchs.push([m[0], ...Array.from(m[1].matchAll(/["']([\s\S]+?)["']/g)).map(v => v[1])])
   })
 

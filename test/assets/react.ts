@@ -101,3 +101,13 @@ export const dynamicCode = `
 })
 }/>
 `
+// 空 className
+export const emptyClassName = `
+<View className="">
+    <Button size="lg">123123</Button>
+</View>
+
+<View className={}>
+    <Button size="lg">123123</Button>
+</View>
+`

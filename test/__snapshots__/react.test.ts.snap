@@ -135,6 +135,18 @@ exports[`react > getClass 2`] = `
 ]
 `;
 
+exports[`react > getClass 3`] = `
+[
+  [
+    "className=\\"\\"",
+    "",
+  ],
+  [
+    "className={}",
+  ],
+]
+`;
+
 exports[`react > transformCode 1`] = `
 "<View className='content'>
 <View className='indent-1_sl_2'> indent-1/2 </View>
@@ -240,5 +252,17 @@ exports[`react > transformCode 2`] = `
   \\"tracking-_lfl_2_sl_5_lfr_\\":false
 })
 }/>
+"
+`;
+
+exports[`react > transformCode 3`] = `
+"
+<View className=\\"\\">
+    <Button size=\\"lg\\">123123</Button>
+</View>
+
+<View className={}>
+    <Button size=\\"lg\\">123123</Button>
+</View>
 "
 `;
