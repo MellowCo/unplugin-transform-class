@@ -14,52 +14,44 @@ export const defaultRules: Record<string, string> = {
   '=': '_eqe_',
 }
 
-const escapePrefix = '\\'
+// const escapePrefix = '\\'
 
 export function escapeRegExp(str = '') {
   return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 }
 
 function createTransformRegExp(rules: Record<string, string>) {
-  return new RegExp(`[${escapeRegExp(Object.keys(rules).join(''))}]`)
+  return new RegExp(`[${escapeRegExp(Object.keys(rules).join(''))}]`, 'g')
 }
 
 /**
  * 转换选择器字符
  * @param selector 选择器
  * @param rules 转换规则
- * @example .bg-[#452233]:50 => .bg--fl--w-452233-fr--c-40-c-50
+ * @example bg-[#452233]:50 => bg--fl--w-452233-fr--c-40-c-50
  */
 export function transformSelector(selector = '', rules = defaultRules) {
   const transformRegExp = createTransformRegExp(rules)
 
-  if (transformRegExp.test(selector)) {
-    for (const transformRule in rules) {
-      const replaceReg = new RegExp(`${escapePrefix}${transformRule}`, 'g')
-      selector = selector.replace(replaceReg, rules[transformRule])
-    }
-  }
-
-  return selector
+  return selector.replaceAll(transformRegExp, (m) => {
+    return rules[m]
+  })
 }
 
 /**
  * 转换转义的选择器字符
  * @param selector 转义选择器
  * @param rules 转换规则
- * @example .bg-\[\#452233\]\:50 => .bg--fl--w-452233-fr--c-40-c-50
+ * @example bg-\[\#452233\]\:50 => bg--fl--w-452233-fr--c-40-c-50
  */
 export function transformEscapESelector(selector = '', rules = defaultRules) {
   const transformRegExp = createTransformRegExp(rules)
 
-  if (transformRegExp.test(selector)) {
-    for (const transformRule in rules) {
-      const replaceReg = new RegExp(escapeRegExp(`${escapePrefix}${transformRule}`), 'g')
-      selector = selector.replace(replaceReg, rules[transformRule])
-    }
-  }
+  console.log(selector)
 
-  return selector
+  return selector.replaceAll(transformRegExp, (m) => {
+    return rules[m]
+  })
 }
 
 /**
