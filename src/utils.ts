@@ -37,6 +37,19 @@ export function transformSelector(selector = '', rules = defaultRules) {
   })
 }
 
+export const cacheTransformSelector = (function () {
+  let transformRegExp: RegExp
+
+  return (selector: string, rules = defaultRules) => {
+    if (!transformRegExp)
+      transformRegExp = createTransformRegExp(rules)
+
+    return selector.replaceAll(transformRegExp, (m) => {
+      return rules[m]
+    })
+  }
+}())
+
 /**
  * 转换转义的选择器字符
  * @param selector 转义选择器
@@ -50,6 +63,19 @@ export function transformEscapESelector(selector = '', rules = defaultRules) {
     return rules[m.replace('\\', '')]
   })
 }
+
+export const cacheTransformEscapESelector = (function () {
+  let transformRegExp: RegExp
+
+  return (selector: string, rules = defaultRules) => {
+    if (!transformRegExp)
+      transformRegExp = createTransformRegExp(rules, true)
+
+    return selector.replaceAll(transformRegExp, (m) => {
+      return rules[m.replace('\\', '')]
+    })
+  }
+}())
 
 /**
  * 还原转换后的选择器
@@ -65,5 +91,21 @@ export function restoreSelector(selector = '', rules = defaultRules) {
     return reverseRules[m]
   })
 }
+
+export const cacheRestoreSelector = (function () {
+  let transformRegExp: RegExp
+  let reverseRules: Record<string, string>
+
+  return (selector: string, rules = defaultRules) => {
+    if (!transformRegExp) {
+      reverseRules = Object.fromEntries(Object.entries(rules).map(([key, value]) => [value, key]))
+      transformRegExp = createTransformRegExp(reverseRules)
+    }
+
+    return selector.replaceAll(transformRegExp, (m) => {
+      return reverseRules[m]
+    })
+  }
+}())
 
 export { transformCode, getClass } from './core'

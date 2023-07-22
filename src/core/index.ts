@@ -1,5 +1,5 @@
 import { trim } from '@meoc/utils'
-import { defaultRules, transformSelector } from '../utils'
+import { cacheTransformSelector, defaultRules } from '../utils'
 
 /**
  * 获取class
@@ -61,7 +61,7 @@ export function transformCode(code: string, rules = defaultRules) {
   classNames.forEach((c) => {
     let currentClass = c[0]
     c.slice(1).forEach((selector) => {
-      currentClass = currentClass.replace(selector, transformSelector(selector, rules))
+      currentClass = currentClass.replace(selector, cacheTransformSelector(selector, rules))
     })
     code = code.replace(c[0], currentClass)
   })
