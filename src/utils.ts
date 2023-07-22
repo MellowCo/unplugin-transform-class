@@ -14,14 +14,13 @@ export const defaultRules: Record<string, string> = {
   '=': '_eqe_',
 }
 
-// const escapePrefix = '\\'
-
 export function escapeRegExp(str = '') {
   return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 }
 
-function createTransformRegExp(rules: Record<string, string>) {
-  return new RegExp(`[${escapeRegExp(Object.keys(rules).join(''))}]`, 'g')
+function createTransformRegExp(rules: Record<string, string>, needEscape = false) {
+  const escapePrefix = '\\'
+  return new RegExp(Object.keys(rules).map(rule => escapeRegExp(`${needEscape ? escapePrefix : ''}${rule}`)).join('|'), 'g')
 }
 
 /**
@@ -45,12 +44,10 @@ export function transformSelector(selector = '', rules = defaultRules) {
  * @example bg-\[\#452233\]\:50 => bg--fl--w-452233-fr--c-40-c-50
  */
 export function transformEscapESelector(selector = '', rules = defaultRules) {
-  const transformRegExp = createTransformRegExp(rules)
-
-  console.log(selector)
+  const transformRegExp = createTransformRegExp(rules, true)
 
   return selector.replaceAll(transformRegExp, (m) => {
-    return rules[m]
+    return rules[m.replace('\\', '')]
   })
 }
 
@@ -61,11 +58,12 @@ export function transformEscapESelector(selector = '', rules = defaultRules) {
  * @example .bg--fl--w-452233-fr--c-40-c-50 => .bg-[#452233]:50
  */
 export function restoreSelector(selector = '', rules = defaultRules) {
-  for (const transformRule in rules) {
-    const replaceReg = new RegExp(rules[transformRule], 'g')
-    selector = selector.replace(replaceReg, transformRule)
-  }
-  return selector
+  const reverseRules = Object.fromEntries(Object.entries(rules).map(([key, value]) => [value, key]))
+  const transformRegExp = createTransformRegExp(reverseRules)
+
+  return selector.replaceAll(transformRegExp, (m) => {
+    return reverseRules[m]
+  })
 }
 
 export { transformCode, getClass } from './core'
