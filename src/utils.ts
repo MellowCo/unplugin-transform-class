@@ -40,7 +40,7 @@ export function transformSelector(selector = '', rules = defaultRules) {
 export const cacheTransformSelector = (function () {
   let transformRegExp: RegExp
 
-  return (selector: string, rules = defaultRules) => {
+  return (selector = '', rules = defaultRules) => {
     if (!transformRegExp)
       transformRegExp = createTransformRegExp(rules)
 
@@ -67,7 +67,7 @@ export function transformEscapESelector(selector = '', rules = defaultRules) {
 export const cacheTransformEscapESelector = (function () {
   let transformRegExp: RegExp
 
-  return (selector: string, rules = defaultRules) => {
+  return (selector = '', rules = defaultRules) => {
     if (!transformRegExp)
       transformRegExp = createTransformRegExp(rules, true)
 
@@ -96,7 +96,7 @@ export const cacheRestoreSelector = (function () {
   let transformRegExp: RegExp
   let reverseRules: Record<string, string>
 
-  return (selector: string, rules = defaultRules) => {
+  return (selector = '', rules = defaultRules) => {
     if (!transformRegExp) {
       reverseRules = Object.fromEntries(Object.entries(rules).map(([key, value]) => [value, key]))
       transformRegExp = createTransformRegExp(reverseRules)
