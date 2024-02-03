@@ -43,75 +43,75 @@ exports[`react > getClass 1`] = `
     "text-gray-500:50",
   ],
   [
-    "className=\\"text-gray-500/50\\"",
+    "className="text-gray-500/50"",
     "text-gray-500/50",
   ],
   [
-    "className=\\"text-red-500_50\\"",
+    "className="text-red-500_50"",
     "text-red-500_50",
   ],
   [
-    "className=\\"text-red-500:50\\"",
+    "className="text-red-500:50"",
     "text-red-500:50",
   ],
   [
-    "className=\\"text-red-500/50\\"",
+    "className="text-red-500/50"",
     "text-red-500/50",
   ],
   [
-    "className=\\"text-yellow-500_50\\"",
+    "className="text-yellow-500_50"",
     "text-yellow-500_50",
   ],
   [
-    "className=\\"text-yellow-500:50\\"",
+    "className="text-yellow-500:50"",
     "text-yellow-500:50",
   ],
   [
-    "className=\\"text-yellow-500/50\\"",
+    "className="text-yellow-500/50"",
     "text-yellow-500/50",
   ],
   [
-    "className=\\"text-blue-500_50\\"",
+    "className="text-blue-500_50"",
     "text-blue-500_50",
   ],
   [
-    "className=\\"text-blue-500/50\\"",
+    "className="text-blue-500/50"",
     "text-blue-500/50",
   ],
   [
-    "className=\\"text-blue-500:50\\"",
+    "className="text-blue-500:50"",
     "text-blue-500:50",
   ],
   [
-    "className=\\"text-green-500_50\\"",
+    "className="text-green-500_50"",
     "text-green-500_50",
   ],
   [
-    "className=\\"text-green-500:50\\"",
+    "className="text-green-500:50"",
     "text-green-500:50",
   ],
   [
-    "className=\\"text-green-500/50\\"",
+    "className="text-green-500/50"",
     "text-green-500/50",
   ],
   [
-    "className=\\"c-hex-157_60\\"",
+    "className="c-hex-157_60"",
     "c-hex-157_60",
   ],
   [
-    "className=\\"c-hex-157/60\\"",
+    "className="c-hex-157/60"",
     "c-hex-157/60",
   ],
   [
-    "className=\\"c-[#157]/60\\"",
+    "className="c-[#157]/60"",
     "c-[#157]/60",
   ],
   [
-    "className=\\"c-[#157]_60\\"",
+    "className="c-[#157]_60"",
     "c-[#157]_60",
   ],
   [
-    "className=\\"c-[#157]:60\\"",
+    "className="c-[#157]:60"",
     "c-[#157]:60",
   ],
 ]
@@ -120,14 +120,14 @@ exports[`react > getClass 1`] = `
 exports[`react > getClass 2`] = `
 [
   [
-    "className={day < 20 ? 'c-#e67e22' : \\"c-[#157]/60\\"}",
+    "className={day < 20 ? 'c-#e67e22' : "c-[#157]/60"}",
     "c-#e67e22",
     "c-[#157]/60",
   ],
   [
     "className={classnames({
   'c-#e67e22':true, 
-  \\"tracking-[2/5]\\":false
+  "tracking-[2/5]":false
 }",
     "c-#e67e22",
     "tracking-[2/5]",
@@ -138,7 +138,7 @@ exports[`react > getClass 2`] = `
 exports[`react > getClass 3`] = `
 [
   [
-    "className=\\"\\"",
+    "className=""",
     "",
   ],
   [
@@ -169,75 +169,75 @@ text-gray-500
 text-gray-500
 </View>
 
-<View className=\\"text-gray-500_sl_50\\">
+<View className="text-gray-500_sl_50">
 text-gray-500
 </View>
 
-<View className=\\"text-red-500_50\\">
+<View className="text-red-500_50">
 text-red-500
 </View>
 
-<View className=\\"text-red-500_cl_50\\">
+<View className="text-red-500_cl_50">
 text-red-500
 </View>
 
-<View className=\\"text-red-500_sl_50\\">
+<View className="text-red-500_sl_50">
 text-red-500
 </View>
 
-<View className=\\"text-yellow-500_50\\">
+<View className="text-yellow-500_50">
 text-yellow-500
 </View>
 
-<View className=\\"text-yellow-500_cl_50\\">
+<View className="text-yellow-500_cl_50">
 text-yellow-500
 </View>
 
-<View className=\\"text-yellow-500_sl_50\\">
+<View className="text-yellow-500_sl_50">
 text-yellow-500
 </View>
 
-<View className=\\"text-blue-500_50\\">
+<View className="text-blue-500_50">
 text-blue-500
 </View>
 
-<View className=\\"text-blue-500_sl_50\\">
+<View className="text-blue-500_sl_50">
 text-blue-500
 </View>
 
-<View className=\\"text-blue-500_cl_50\\">
+<View className="text-blue-500_cl_50">
 text-blue-500
 </View>
 
-<View className=\\"text-green-500_50\\">
+<View className="text-green-500_50">
 text-green-500
 </View>
 
-<View className=\\"text-green-500_cl_50\\">
+<View className="text-green-500_cl_50">
 text-green-500
 </View>
 
-<View className=\\"text-green-500_sl_50\\">
+<View className="text-green-500_sl_50">
 text-green-500
 </View>
 
-<View className=\\"c-hex-157_60\\">
+<View className="c-hex-157_60">
 c-hex-157
 </View>
 
-<View className=\\"c-hex-157_sl_60\\">
+<View className="c-hex-157_sl_60">
 c-hex-157
 </View>
 
-<View className=\\"c-_lfl__wn_157_lfr__sl_60\\">
+<View className="c-_lfl__wn_157_lfr__sl_60">
 c-[#157]
 </View>
 
-<View className=\\"c-_lfl__wn_157_lfr__60\\">
+<View className="c-_lfl__wn_157_lfr__60">
 c-[#157]
 </View>
 
-<View className=\\"c-_lfl__wn_157_lfr__cl_60\\">
+<View className="c-_lfl__wn_157_lfr__cl_60">
 c-[#157]
 </View>
 </View>"
@@ -245,11 +245,11 @@ c-[#157]
 
 exports[`react > transformCode 2`] = `
 "
-<div className={day < 20 ? 'c-_wn_e67e22' : \\"c-_lfl__wn_157_lfr__sl_60\\"} >剩余 {day} 天</div>
+<div className={day < 20 ? 'c-_wn_e67e22' : "c-_lfl__wn_157_lfr__sl_60"} >剩余 {day} 天</div>
 <div className />
 <div className={classnames({
   'c-_wn_e67e22':true, 
-  \\"tracking-_lfl_2_sl_5_lfr_\\":false
+  "tracking-_lfl_2_sl_5_lfr_":false
 })
 }/>
 "
@@ -257,12 +257,12 @@ exports[`react > transformCode 2`] = `
 
 exports[`react > transformCode 3`] = `
 "
-<View className=\\"\\">
-    <Button size=\\"lg\\">123123</Button>
+<View className="">
+    <Button size="lg">123123</Button>
 </View>
 
 <View className={}>
-    <Button size=\\"lg\\">123123</Button>
+    <Button size="lg">123123</Button>
 </View>
 "
 `;

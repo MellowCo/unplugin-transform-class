@@ -12,7 +12,7 @@ exports[`vue > getArrClass 1`] = `
 exports[`vue > getClass 1`] = `
 [
   [
-    "class=\\"text-red-500:20  bg-blue-200:20\\"",
+    "class="text-red-500:20  bg-blue-200:20"",
     "text-red-500:20  bg-blue-200:20",
   ],
 ]
@@ -21,7 +21,7 @@ exports[`vue > getClass 1`] = `
 exports[`vue > getClass 2`] = `
 [
   [
-    ":class=\\"[fontSize ? '' : 'text-size-m', customClass]\\"",
+    ":class="[fontSize ? '' : 'text-size-m', customClass]"",
     "",
     "text-size-m",
   ],
@@ -44,7 +44,7 @@ exports[`vue > getObjClass 2`] = `
 `;
 
 exports[`vue > replaceAll 1`] = `
-"<view class=\\"text-red-500_cl_20  bg-blue-200_cl_20 bg-_lfl__wn_333_lfr__sl_50 bg-_lfl__wn_999_lfr__sl_50\\">
+"<view class="text-red-500_cl_20  bg-blue-200_cl_20 bg-_lfl__wn_333_lfr__sl_50 bg-_lfl__wn_999_lfr__sl_50">
 text-red-500:20
 </view>"
 `;
@@ -57,43 +57,43 @@ exports[`vue > restoreSelector 3`] = `"bg-[url(https://img.cdn.sugarat.top/mdImg
 
 exports[`vue > transform rules 1`] = `
 "<template>
-<view class=\\"content-ccc1 text\\">
-  <view class=\\"indent-1-sr-2\\">
+<view class="content-ccc1 text">
+  <view class="indent-1-sr-2">
     indent-1/2
   </view>
-  <view class=\\"font--flr-system-ui-frr- bg-teal-200-cr-55\\">
+  <view class="font--flr-system-ui-frr- bg-teal-200-cr-55">
     font-[system-ui]
   </view>
-  <view class=\\"font--rr-font-name\\">
+  <view class="font--rr-font-name">
     font-$font-name
   </view>
 
-  <view class=\\"font--rr-font-name\\" :class=\\"[title === '2.3' ? 'font--rr-font-name bg-teal-200-cr-55' : 'tracking--flr-2-sr-5-frr-',isFont ? 'font--rr-font-name' : 'tracking--flr-2-sr-5-frr-']\\">
+  <view class="font--rr-font-name" :class="[title === '2.3' ? 'font--rr-font-name bg-teal-200-cr-55' : 'tracking--flr-2-sr-5-frr-',isFont ? 'font--rr-font-name' : 'tracking--flr-2-sr-5-frr-']">
     [title === '2.3' ? 'font-$font-name bg-teal-200:55' : 'tracking-[2/5]',isFont ? 'font-$font-name' : 'tracking-[2/5]']
   </view>
 
-  <view :class=\\"{ 'bg-teal-200-cr-55': title === 'Hello', 'h-1-dr-000-pr-': title === 'Hello', 'font--rr-font-name': isFont }\\">
+  <view :class="{ 'bg-teal-200-cr-55': title === 'Hello', 'h-1-dr-000-pr-': title === 'Hello', 'font--rr-font-name': isFont }">
     { 'bg-teal-200:55': title === 'Hello', 'h-1.000%': title === 'Hello', 'font-$font-name': isFont }
   </view>
 
-  <view class=\\"tracking--flr-2-sr-5-frr- bg-teal-200-cr-55\\">
+  <view class="tracking--flr-2-sr-5-frr- bg-teal-200-cr-55">
     tracking-[2/5]
   </view>
 
-  <view class=\\"h-1-dr-000-pr-\\">
+  <view class="h-1-dr-000-pr-">
     h-1.000%
   </view>
 
-  <view class=\\"h-1-dr-000-pr-\\">
+  <view class="h-1-dr-000-pr-">
   h-1.000%
 </view>
 
-  <view class=\\"bg-teal-200-cr-55\\">
+  <view class="bg-teal-200-cr-55">
     bg-teal-200:55
   </view>
-  <image class=\\"logo\\" src=\\"/static/logo.png\\" />
-  <view class=\\"text-area\\">
-    <text class=\\"title\\">
+  <image class="logo" src="/static/logo.png" />
+  <view class="text-area">
+    <text class="title">
       {{ title }}
     </text>
   </view>
@@ -104,46 +104,46 @@ exports[`vue > transform rules 1`] = `
 exports[`vue > transform rules 2`] = `
 "
 <template>
-<view class=\\"p-2\\">
-  <view class=\\"w-300 p-2 bg-green-200 text-center\\" @click=\\"onChange\\">
+<view class="p-2">
+  <view class="w-300 p-2 bg-green-200 text-center" @click="onChange">
     change flag
   </view>
 
   <view
-    :class=\\"{
+    :class="{
       'bg-blue-600-cr-80': flag,
       'text-green-600-sr-40': !flag,
-    }\\"
+    }"
   >
     111111111
   </view>
 
   <view
-    :class=\\"{'bg-blue-600-cr-80': flag,'text-green-600-sr-40': !flag}\\"
+    :class="{'bg-blue-600-cr-80': flag,'text-green-600-sr-40': !flag}"
   >
     111111111
   </view>
 
 
   <view
-  :class=\\"[
+  :class="[
     flag ? 'bg-blue-600-sr-40' : 'bg-blue-600-cr-80',
     !flag ? 'text-yellow-800-sr-80' : 'text-yellow-800-sr-40',
-  ]\\"
+  ]"
 >
   111111111
 </view>
 
 <view
-  :class=\\"[
+  :class="[
     flag ? 'bg-blue-600-sr-40' : 'bg-blue-600-cr-80',
     !flag ? 'text-yellow-800-sr-80' : 'text-yellow-800-sr-40',
-  ]\\"
+  ]"
 >
   111111111
 </view>
 
-<view class=\\"content title foot\\">view</view>
+<view class="content title foot">view</view>
 </view>
 </template>
 "
@@ -152,44 +152,44 @@ exports[`vue > transform rules 2`] = `
 exports[`vue > transform rules 3`] = `
 "
 <template>
-<view v-if=\\"n.name=='img'\\" :class=\\"'_img '+n.attrs.class\\" :style=\\"n.attrs.style\\" :data-attrs=\\"n.attrs\\" @tap=\\"imgtap\\">
+<view v-if="n.name=='img'" :class="'_img '+n.attrs.class" :style="n.attrs.style" :data-attrs="n.attrs" @tap="imgtap">
 </view>
-<view :class=\\"n.attrs.class\\"></view>  
+<view :class="n.attrs.class"></view>  
 </template>
 "
 `;
 
 exports[`vue > transform rules 4`] = `
 "
-<view class=\\"\\"
+<view class=""
 >1. xxxxxxxx。
 </view>
 
-<view class=\\"\\">2. 22222222。 </view>
+<view class="">2. 22222222。 </view>
 "
 `;
 
 exports[`vue > transform rules 5`] = `
 "
 <uni-transition
-v-if=\\"maskShow\\"
-:mode-class=\\"['fade']\\"
-:styles=\\"maskClass\\"
-:duration=\\"duration\\"
-:show=\\"showTrans\\"
-@click=\\"onTap\\"
+v-if="maskShow"
+:mode-class="['fade']"
+:styles="maskClass"
+:duration="duration"
+:show="showTrans"
+@click="onTap"
 />
 <uni-transition
-:mode-class=\\"ani\\"
-:styles=\\"transClass\\"
-:duration=\\"duration\\"
-:show=\\"showTrans\\"
-@click=\\"onTap\\"
+:mode-class="ani"
+:styles="transClass"
+:duration="duration"
+:show="showTrans"
+@click="onTap"
 >
 <view
-  class=\\"uni-popup__wrapper-box\\"
-  :class=\\"{isBottom: type == 'bottom','text-center':true}\\"
-  @click.stop=\\"clear\\"
+  class="uni-popup__wrapper-box"
+  :class="{isBottom: type == 'bottom','text-center':true}"
+  @click.stop="clear"
 >
   <slot />
 </view>
@@ -199,72 +199,72 @@ v-if=\\"maskShow\\"
 
 exports[`vue > transform rules 6`] = `
 "
-<text @click=\\"emits('click', $event)\\" 
-:selectable=\\"selectable\\" 
-:user-select=\\"selectable\\" 
-:class=\\"[fontSize ? '' : 'text-size-m', customClass]\\" :style=\\"[
+<text @click="emits('click', $event)" 
+:selectable="selectable" 
+:user-select="selectable" 
+:class="[fontSize ? '' : 'text-size-m', customClass]" :style="[
   {
     lineHeight: (_fontSize ? _fontSize * 1.3 : 42) + props.unit, color: textColor
   },
   _fontSize ? { fontSize: _fontSize + props.unit } : '',
   customCSSStyle,
-]\\">
+]">
 <slot>{{ _label }}</slot>
 </text>"
 `;
 
 exports[`vue > transform rules 7`] = `
 "
-<text :style=\\"{ color: color, fontSize: getSize, fontWeight: fontWeight}\\" class=\\"fui-icon\\" :class=\\"[!color && !primary?'fui-icon__color':'',primary && !color?'fui-icon__active-color':'',disabled?'fui-icon__not-allowed':'',customPrefix,customPrefix?name:'']\\"
-@click=\\"handleClick\\">{{ icons[name] || '' }}</text>
+<text :style="{ color: color, fontSize: getSize, fontWeight: fontWeight}" class="fui-icon" :class="[!color && !primary?'fui-icon__color':'',primary && !color?'fui-icon__active-color':'',disabled?'fui-icon__not-allowed':'',customPrefix,customPrefix?name:'']"
+@click="handleClick">{{ icons[name] || '' }}</text>
 "
 `;
 
 exports[`vue > transform rules 8`] = `
-"<view class=\\"bg--flr-url-blr-https-cr--sr--sr-img-dr-cdn-dr-sugarat-dr-top-sr-mdImg-sr-MTY2ODA4OTc3MjcyMg-eqq--eqq-unocss-icon-gray-dr-svg-brr--frr-\\">
+"<view class="bg--flr-url-blr-https-cr--sr--sr-img-dr-cdn-dr-sugarat-dr-top-sr-mdImg-sr-MTY2ODA4OTc3MjcyMg-eqq--eqq-unocss-icon-gray-dr-svg-brr--frr-">
 bg ==
 </view>"
 `;
 
 exports[`vue > transformCode 1`] = `
 "<template>
-<view class=\\"content_lco_1 text\\">
-  <view class=\\"indent-1_sl_2\\">
+<view class="content_lco_1 text">
+  <view class="indent-1_sl_2">
     indent-1/2
   </view>
-  <view class=\\"font-_lfl_system-ui_lfr_ bg-teal-200_cl_55\\">
+  <view class="font-_lfl_system-ui_lfr_ bg-teal-200_cl_55">
     font-[system-ui]
   </view>
-  <view class=\\"font-_do_font-name\\">
+  <view class="font-_do_font-name">
     font-$font-name
   </view>
 
-  <view class=\\"font-_do_font-name\\" :class=\\"[title === '2.3' ? 'font-_do_font-name bg-teal-200_cl_55' : 'tracking-_lfl_2_sl_5_lfr_',isFont ? 'font-_do_font-name' : 'tracking-_lfl_2_sl_5_lfr_']\\">
+  <view class="font-_do_font-name" :class="[title === '2.3' ? 'font-_do_font-name bg-teal-200_cl_55' : 'tracking-_lfl_2_sl_5_lfr_',isFont ? 'font-_do_font-name' : 'tracking-_lfl_2_sl_5_lfr_']">
     [title === '2.3' ? 'font-$font-name bg-teal-200:55' : 'tracking-[2/5]',isFont ? 'font-$font-name' : 'tracking-[2/5]']
   </view>
 
-  <view :class=\\"{ 'bg-teal-200_cl_55': title === 'Hello', 'h-1_dl_000_pes_': title === 'Hello', 'font-_do_font-name': isFont }\\">
+  <view :class="{ 'bg-teal-200_cl_55': title === 'Hello', 'h-1_dl_000_pes_': title === 'Hello', 'font-_do_font-name': isFont }">
     { 'bg-teal-200:55': title === 'Hello', 'h-1.000%': title === 'Hello', 'font-$font-name': isFont }
   </view>
 
-  <view class=\\"tracking-_lfl_2_sl_5_lfr_ bg-teal-200_cl_55\\">
+  <view class="tracking-_lfl_2_sl_5_lfr_ bg-teal-200_cl_55">
     tracking-[2/5]
   </view>
 
-  <view class=\\"h-1_dl_000_pes_\\">
+  <view class="h-1_dl_000_pes_">
     h-1.000%
   </view>
 
-  <view class=\\"h-1_dl_000_pes_\\">
+  <view class="h-1_dl_000_pes_">
   h-1.000%
 </view>
 
-  <view class=\\"bg-teal-200_cl_55\\">
+  <view class="bg-teal-200_cl_55">
     bg-teal-200:55
   </view>
-  <image class=\\"logo\\" src=\\"/static/logo.png\\" />
-  <view class=\\"text-area\\">
-    <text class=\\"title\\">
+  <image class="logo" src="/static/logo.png" />
+  <view class="text-area">
+    <text class="title">
       {{ title }}
     </text>
   </view>
@@ -275,46 +275,46 @@ exports[`vue > transformCode 1`] = `
 exports[`vue > transformCode 2`] = `
 "
 <template>
-<view class=\\"p-2\\">
-  <view class=\\"w-300 p-2 bg-green-200 text-center\\" @click=\\"onChange\\">
+<view class="p-2">
+  <view class="w-300 p-2 bg-green-200 text-center" @click="onChange">
     change flag
   </view>
 
   <view
-    :class=\\"{
+    :class="{
       'bg-blue-600_cl_80': flag,
       'text-green-600_sl_40': !flag,
-    }\\"
+    }"
   >
     111111111
   </view>
 
   <view
-    :class=\\"{'bg-blue-600_cl_80': flag,'text-green-600_sl_40': !flag}\\"
+    :class="{'bg-blue-600_cl_80': flag,'text-green-600_sl_40': !flag}"
   >
     111111111
   </view>
 
 
   <view
-  :class=\\"[
+  :class="[
     flag ? 'bg-blue-600_sl_40' : 'bg-blue-600_cl_80',
     !flag ? 'text-yellow-800_sl_80' : 'text-yellow-800_sl_40',
-  ]\\"
+  ]"
 >
   111111111
 </view>
 
 <view
-  :class=\\"[
+  :class="[
     flag ? 'bg-blue-600_sl_40' : 'bg-blue-600_cl_80',
     !flag ? 'text-yellow-800_sl_80' : 'text-yellow-800_sl_40',
-  ]\\"
+  ]"
 >
   111111111
 </view>
 
-<view class=\\"content title foot\\">view</view>
+<view class="content title foot">view</view>
 </view>
 </template>
 "
@@ -323,44 +323,44 @@ exports[`vue > transformCode 2`] = `
 exports[`vue > transformCode 3`] = `
 "
 <template>
-<view v-if=\\"n.name=='img'\\" :class=\\"'_img '+n.attrs.class\\" :style=\\"n.attrs.style\\" :data-attrs=\\"n.attrs\\" @tap=\\"imgtap\\">
+<view v-if="n.name=='img'" :class="'_img '+n.attrs.class" :style="n.attrs.style" :data-attrs="n.attrs" @tap="imgtap">
 </view>
-<view :class=\\"n.attrs.class\\"></view>  
+<view :class="n.attrs.class"></view>  
 </template>
 "
 `;
 
 exports[`vue > transformCode 4`] = `
 "
-<view class=\\"\\"
+<view class=""
 >1. xxxxxxxx。
 </view>
 
-<view class=\\"\\">2. 22222222。 </view>
+<view class="">2. 22222222。 </view>
 "
 `;
 
 exports[`vue > transformCode 5`] = `
 "
 <uni-transition
-v-if=\\"maskShow\\"
-:mode-class=\\"['fade']\\"
-:styles=\\"maskClass\\"
-:duration=\\"duration\\"
-:show=\\"showTrans\\"
-@click=\\"onTap\\"
+v-if="maskShow"
+:mode-class="['fade']"
+:styles="maskClass"
+:duration="duration"
+:show="showTrans"
+@click="onTap"
 />
 <uni-transition
-:mode-class=\\"ani\\"
-:styles=\\"transClass\\"
-:duration=\\"duration\\"
-:show=\\"showTrans\\"
-@click=\\"onTap\\"
+:mode-class="ani"
+:styles="transClass"
+:duration="duration"
+:show="showTrans"
+@click="onTap"
 >
 <view
-  class=\\"uni-popup__wrapper-box\\"
-  :class=\\"{isBottom: type == 'bottom','text-center':true}\\"
-  @click.stop=\\"clear\\"
+  class="uni-popup__wrapper-box"
+  :class="{isBottom: type == 'bottom','text-center':true}"
+  @click.stop="clear"
 >
   <slot />
 </view>
@@ -370,29 +370,36 @@ v-if=\\"maskShow\\"
 
 exports[`vue > transformCode 6`] = `
 "
-<text @click=\\"emits('click', $event)\\" 
-:selectable=\\"selectable\\" 
-:user-select=\\"selectable\\" 
-:class=\\"[fontSize ? '' : 'text-size-m', customClass]\\" :style=\\"[
+<view class="bg-_lfl_--l-tab-bar-bg-color_lco_theme_lbl_backgroundColor_dl_container_lbr__lfr_" />
+<view :class="{'bg-[--l-tab-bar-bg-color,theme(backgroundColor.container)]': true}" />
+"
+`;
+
+exports[`vue > transformCode 7`] = `
+"
+<text @click="emits('click', $event)" 
+:selectable="selectable" 
+:user-select="selectable" 
+:class="[fontSize ? '' : 'text-size-m', customClass]" :style="[
   {
     lineHeight: (_fontSize ? _fontSize * 1.3 : 42) + props.unit, color: textColor
   },
   _fontSize ? { fontSize: _fontSize + props.unit } : '',
   customCSSStyle,
-]\\">
+]">
 <slot>{{ _label }}</slot>
 </text>"
 `;
 
-exports[`vue > transformCode 7`] = `
+exports[`vue > transformCode 8`] = `
 "
-<text :style=\\"{ color: color, fontSize: getSize, fontWeight: fontWeight}\\" class=\\"fui-icon\\" :class=\\"[!color && !primary?'fui-icon__color':'',primary && !color?'fui-icon__active-color':'',disabled?'fui-icon__not-allowed':'',customPrefix,customPrefix?name:'']\\"
-@click=\\"handleClick\\">{{ icons[name] || '' }}</text>
+<text :style="{ color: color, fontSize: getSize, fontWeight: fontWeight}" class="fui-icon" :class="[!color && !primary?'fui-icon__color':'',primary && !color?'fui-icon__active-color':'',disabled?'fui-icon__not-allowed':'',customPrefix,customPrefix?name:'']"
+@click="handleClick">{{ icons[name] || '' }}</text>
 "
 `;
 
-exports[`vue > transformCode 8`] = `
-"<view class=\\"bg-_lfl_url_lbl_https_cl__sl__sl_img_dl_cdn_dl_sugarat_dl_top_sl_mdImg_sl_MTY2ODA4OTc3MjcyMg_eqe__eqe_unocss-icon-gray_dl_svg_lbr__lfr_\\">
+exports[`vue > transformCode 9`] = `
+"<view class="bg-_lfl_url_lbl_https_cl__sl__sl_img_dl_cdn_dl_sugarat_dl_top_sl_mdImg_sl_MTY2ODA4OTc3MjcyMg_eqe__eqe_unocss-icon-gray_dl_svg_lbr__lfr_">
 bg ==
 </view>"
 `;
