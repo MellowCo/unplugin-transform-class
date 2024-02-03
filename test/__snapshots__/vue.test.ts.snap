@@ -371,7 +371,7 @@ v-if="maskShow"
 exports[`vue > transformCode 6`] = `
 "
 <view class="bg-_lfl_--l-tab-bar-bg-color_lco_theme_lbl_backgroundColor_dl_container_lbr__lfr_" />
-<view :class="{'bg-[--l-tab-bar-bg-color,theme(backgroundColor.container)]': true}" />
+<view :class="{'bg-_lfl_--l-tab-bar-bg-color_lco_theme_lbl_backgroundColor_dl_container_lbr__lfr_': true}" />
 "
 `;
 

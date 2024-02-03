@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { getArrClass, getClass, getObjClass, transformCode } from '../src/core'
 import { restoreSelector } from '../src/utils'
-import { equalCode, firstUI, getArrClassCode, getClassCode, getObjClassCode1, getObjClassCode2, replaceAllCode, tmText, vueCode, vueCode2, vueCode3, vueCode4, vueCode5 } from './assets/vue'
+import { equalCode, firstUI, getArrClassCode, getClassCode, getObjClassCode1, getObjClassCode2, replaceAllCode, tmText, vueCode, vueCode2, vueCode3, vueCode4, vueCode5, vueCode6 } from './assets/vue'
 
 const rules = {
   '.': '-dr-',
@@ -44,6 +44,7 @@ describe('vue', () => {
     expect(transformCode(vueCode3)).toMatchSnapshot()
     expect(transformCode(vueCode4)).toMatchSnapshot()
     expect(transformCode(vueCode5)).toMatchSnapshot()
+    expect(transformCode(vueCode6)).toMatchSnapshot()
     expect(transformCode(tmText)).toMatchSnapshot()
     expect(transformCode(firstUI)).toMatchSnapshot()
     expect(transformCode(equalCode)).toMatchSnapshot()

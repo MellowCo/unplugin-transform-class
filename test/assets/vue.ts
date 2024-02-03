@@ -192,3 +192,9 @@ export const firstUI = `
 export const equalCode = `<view class="bg-[url(https://img.cdn.sugarat.top/mdImg/MTY2ODA4OTc3MjcyMg==unocss-icon-gray.svg)]">
 bg ==
 </view>`
+
+// https://github.com/MellowCo/unocss-preset-weapp/issues/127
+export const vueCode6 = `
+<view class="bg-_lfl_--l-tab-bar-bg-color_lco_theme_lbl_backgroundColor_dl_container_lbr__lfr_" />
+<view :class="{'bg-[--l-tab-bar-bg-color,theme(backgroundColor.container)]': true}" />
+`

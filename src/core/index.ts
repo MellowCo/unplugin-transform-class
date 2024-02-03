@@ -43,7 +43,7 @@ export function getClass(code: string) {
 export function getObjClass(className: string) {
   // class="{ 'bg-teal-200:55': title === 'Hello', 'h-1.000%': title === 'Hello' }"
   // => ['bg-teal-200:55','h-1.000%']
-  return Array.from(className.matchAll(/'([^,]+?)'\s*:/g)).map(v => v[1])
+  return Array.from(className.matchAll(/'([^']+?)'\s*:/g)).map(v => v[1])
 }
 
 export function getArrClass(className: string) {
