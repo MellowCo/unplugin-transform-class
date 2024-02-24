@@ -372,6 +372,17 @@ exports[`vue > transformCode 6`] = `
 "
 <view class="bg-_lfl_--l-tab-bar-bg-color_lco_theme_lbl_backgroundColor_dl_container_lbr__lfr_" />
 <view :class="{'bg-_lfl_--l-tab-bar-bg-color_lco_theme_lbl_backgroundColor_dl_container_lbr__lfr_': true}" />
+<view :class="{ 'left-_lfl_calc_lbl_-1_star_var_lbl_--td-badge-basic-height_lbr__plus_1rpx_lbr__lfr_': 1 === 1 }">
+test
+</view>
+
+<view :class="[1 === 1 ? 'left-_lfl_calc_lbl_-1_star_var_lbl_--td-badge-basic-height_lbr__plus_1rpx_lbr__lfr_ left' : ''] ">
+  test
+</view>
+
+<view :class="[1 === 1 && 'left-_lfl_calc_lbl_-1_star_var_lbl_--td-badge-basic-height_lbr__plus_1rpx_lbr__lfr_ left'] ">
+  test
+</view>
 "
 `;
 

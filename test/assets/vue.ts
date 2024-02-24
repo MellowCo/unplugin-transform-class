@@ -197,4 +197,15 @@ bg ==
 export const vueCode6 = `
 <view class="bg-_lfl_--l-tab-bar-bg-color_lco_theme_lbl_backgroundColor_dl_container_lbr__lfr_" />
 <view :class="{'bg-[--l-tab-bar-bg-color,theme(backgroundColor.container)]': true}" />
+<view :class="{ 'left-[calc(-1*var(--td-badge-basic-height)+1rpx)]': 1 === 1 }">
+test
+</view>
+
+<view :class="[1 === 1 ? 'left-[calc(-1*var(--td-badge-basic-height)+1rpx)] left' : ''] ">
+  test
+</view>
+
+<view :class="[1 === 1 && 'left-[calc(-1*var(--td-badge-basic-height)+1rpx)] left'] ">
+  test
+</view>
 `
