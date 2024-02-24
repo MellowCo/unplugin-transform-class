@@ -12,6 +12,8 @@ export const defaultRules: Record<string, string> = {
   '$': '_do_',
   ',': '_lco_',
   '=': '_eqe_',
+  '+': '_plus_',
+  '*': '_star_',
 }
 
 export function escapeRegExp(str = '') {
