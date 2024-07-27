@@ -9,8 +9,6 @@ unplugin-transform-class
 
 transfrom `html class` selector by custom rules 
 
-to fit the functional semantics，`unplugin-transform-we-class` rename to `unplugin-transform-class`
-
 ---
 
 static class
