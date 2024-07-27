@@ -9,8 +9,6 @@ unplugin-transform-class
 
 按照自定义转换规则， 转换 `html class` 选择器
 
-为了贴合功能语义，`unplugin-transform-we-class` 改名为 `unplugin-transform-class`
-
 ---
 
 静态class
