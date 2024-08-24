@@ -1,14 +1,20 @@
 import { trim } from '@meoc/utils'
 import { cacheTransformSelector, defaultRules } from '../utils'
+import type { ClassNameMatcher } from '../types'
 
 /**
  * 获取class
  */
-export function getClass(code: string) {
-  const matchs: string[][] = []
+export function getClass(code: string, classNameMatcher: ClassNameMatcher) {
+  const matches: string[][] = []
+  const attrNameReg = classNameMatcher instanceof RegExp
+    ? classNameMatcher
+    : new RegExp(String.raw`${classNameMatcher}`)
+  const classReg = new RegExp(String.raw`\s:?(${attrNameReg.source})="(?<classNames>[\s\S]*?)"`, 'g')
+
   // vue
-  Array.from(code.matchAll(/\s:?class="([\s\S]*?)"/g)).forEach((m) => {
-    const classStr = m[1]
+  Array.from(code.matchAll(classReg)).forEach((m) => {
+    const classStr = m.groups?.classNames as string
     const sourceStr = trim(m[0])
 
     let classArr = [sourceStr]
@@ -24,20 +30,20 @@ export function getClass(code: string) {
       classArr.push(classStr)
     }
 
-    matchs.push(classArr)
+    matches.push(classArr)
   })
 
   // react className="xxxx"
   Array.from(code.matchAll(/className=["']([\s\S]*?)["']/g)).forEach((m) => {
-    matchs.push([m[0], m[1]])
+    matches.push([m[0], m[1]])
   })
 
   // className={xxxx}
   Array.from(code.matchAll(/className=[{]([\s\S]*?)[}]/g)).forEach((m) => {
-    matchs.push([m[0], ...Array.from(m[1].matchAll(/["']([\s\S]+?)["']/g)).map(v => v[1])])
+    matches.push([m[0], ...Array.from(m[1].matchAll(/["']([\s\S]+?)["']/g)).map(v => v[1])])
   })
 
-  return matchs
+  return matches
 }
 
 export function getObjClass(className: string) {
@@ -55,8 +61,8 @@ export function getArrClass(className: string) {
   return Array.from(className.matchAll(/(?<=[\?\:&])\s*'(.*?)'/g)).map(v => v[1])
 }
 
-export function transformCode(code: string, rules = defaultRules) {
-  const classNames = getClass(code)
+export function transformCode(code: string, rules = defaultRules, classNameMatcher: ClassNameMatcher) {
+  const classNames = getClass(code, classNameMatcher)
 
   classNames.forEach((c) => {
     let currentClass = c[0]

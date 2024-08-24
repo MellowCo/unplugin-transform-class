@@ -3,12 +3,13 @@ import { createFilter } from '@rollup/pluginutils'
 import type { Options } from './types'
 import { transformCode } from './core'
 
-export default createUnplugin<Options>((options = {}) => {
-  const rules = options.rules
+export default createUnplugin((options?: Options) => {
+  const rules = options?.rules
+  const classNameMatcher = options?.classNameMatcher ?? 'class'
 
   const filter = createFilter(
-    options.include || [/\.[jt]sx?$/, /\.vue$/, /\.vue\?vue/],
-    options.exclude || [/[\\/]node_modules[\\/]/, /[\\/]\.git[\\/]/],
+    options?.include || [/\.[jt]sx?$/, /\.vue$/, /\.vue\?vue/],
+    options?.exclude || [/[\\/]node_modules[\\/]/, /[\\/]\.git[\\/]/],
   )
 
   return {
@@ -18,7 +19,7 @@ export default createUnplugin<Options>((options = {}) => {
       return filter(id)
     },
     transform(code) {
-      return transformCode(code, rules)
+      return transformCode(code, rules, classNameMatcher)
     },
   }
 })

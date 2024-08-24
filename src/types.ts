@@ -1,5 +1,6 @@
 import type { FilterPattern } from '@rollup/pluginutils'
 
+export type ClassNameMatcher = RegExp | string
 export interface Options {
   /**
    * 自定义转换规则
@@ -33,4 +34,10 @@ export interface Options {
    * @default [/\.[jt]sx?$/, /\.vue$/,  /\.vue\?vue/]
    */
   include?: FilterPattern
+
+  /**
+   * 需要转换的类名匹配规则
+   * @default "class"
+   */
+  classNameMatcher?: ClassNameMatcher
 }
