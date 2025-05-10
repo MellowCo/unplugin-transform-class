@@ -23,5 +23,4 @@ describe('react', () => {
     expect(transformCode(emptyClassName)).toMatchSnapshot()
     expect(transformCode(xxClassName)).toMatchSnapshot()
   })
-
 })

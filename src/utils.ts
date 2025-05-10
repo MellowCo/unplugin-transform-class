@@ -16,11 +16,11 @@ export const defaultRules: Record<string, string> = {
   '*': '_star_',
 }
 
-export function escapeRegExp(str = '') {
+export function escapeRegExp(str = ''): string {
   return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 }
 
-function createTransformRegExp(rules: Record<string, string>, needEscape = false) {
+function createTransformRegExp(rules: Record<string, string>, needEscape = false): RegExp {
   const escapePrefix = '\\'
   return new RegExp(Object.keys(rules).map(rule => escapeRegExp(`${needEscape ? escapePrefix : ''}${rule}`)).join('|'), 'g')
 }
@@ -31,7 +31,7 @@ function createTransformRegExp(rules: Record<string, string>, needEscape = false
  * @param rules 转换规则
  * @example bg-[#452233]:50 => bg--fl--w-452233-fr--c-40-c-50
  */
-export function transformSelector(selector = '', rules = defaultRules) {
+export function transformSelector(selector = '', rules = defaultRules): string {
   const transformRegExp = createTransformRegExp(rules)
 
   return selector.replaceAll(transformRegExp, (m) => {
@@ -58,7 +58,7 @@ export const cacheTransformSelector = (function () {
  * @param rules 转换规则
  * @example bg-\[\#452233\]\:50 => bg--fl--w-452233-fr--c-40-c-50
  */
-export function transformEscapESelector(selector = '', rules = defaultRules) {
+export function transformEscapESelector(selector = '', rules = defaultRules): string {
   const transformRegExp = createTransformRegExp(rules, true)
 
   return selector.replaceAll(transformRegExp, (m) => {
@@ -85,7 +85,7 @@ export const cacheTransformEscapESelector = (function () {
  * @param rules 转换规则
  * @example .bg--fl--w-452233-fr--c-40-c-50 => .bg-[#452233]:50
  */
-export function restoreSelector(selector = '', rules = defaultRules) {
+export function restoreSelector(selector = '', rules = defaultRules): string {
   const reverseRules = Object.fromEntries(Object.entries(rules).map(([key, value]) => [value, key]))
   const transformRegExp = createTransformRegExp(reverseRules)
 
@@ -110,4 +110,4 @@ export const cacheRestoreSelector = (function () {
   }
 }())
 
-export { transformCode, getClass } from './core'
+export { getClass, transformCode } from './core'

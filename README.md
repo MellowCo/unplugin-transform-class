@@ -2,12 +2,11 @@
 unplugin-transform-class
 </H1>
 
-
 <p align='center'>
 <b>English</b> | <a href="https://github.com/MellowCo/unplugin-transform-class/blob/main/README.zh-CN.md">简体中文</a>
 </p>
 
-transfrom `html class` selector by custom rules 
+transfrom `html class` selector by custom rules
 
 ---
 
@@ -73,7 +72,6 @@ transfrom
   111111111
 </view>
 
-
   <view
   :class="[
     flag ? 'bg-blue-600-s-40' : 'bg-blue-600-c-80',
@@ -83,8 +81,6 @@ transfrom
   111111111
 </view>
 ```
-
-
 
 ## installation
 
@@ -96,8 +92,8 @@ npm i unplugin-transform-class -D
 <summary>Vite</summary><br>
 
 ```ts
-import { defineConfig } from 'vite'
 import transformClass from 'unplugin-transform-class/vite'
+import { defineConfig } from 'vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -109,7 +105,6 @@ export default defineConfig({
 ```
 
 <br></details>
-
 
 <details>
 <summary>webpack</summary><br>
@@ -232,7 +227,7 @@ const newCode = transformCode(code, rules)
 ---
 ## use case
 
-### use atomic css in miniprogram 
+### use atomic css in miniprogram
 
 > transfrom the escape class  not supported by miniprogram, like `\\`，`\:` `\[` `\$`  `\.` , implement the atomic css in miniprogram
 
@@ -241,8 +236,6 @@ const newCode = transformCode(code, rules)
 > for example use [unocss-preset-weapp](https://github.com/MellowCo/unocss-preset-weapp), use unocss development in miniprogram
 
 ![image-20220703141301371](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207031413496.png)
-
-
 
 related links
 * [unocss-preset-weapp](https://github.com/MellowCo/unocss-preset-weapp) - the unocss preset for wechat miniprogram.

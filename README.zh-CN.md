@@ -2,7 +2,6 @@
 unplugin-transform-class
 </H1>
 
-
 <p align='center'>
 <a href="https://github.com/MellowCo/unplugin-transform-class/blob/main/README.md">English</a> | <b>简体中文</b>
 </p>
@@ -73,7 +72,6 @@ transformClass({
   111111111
 </view>
 
-
 <view
   :class="[
     flag ? 'bg-blue-600-s-40' : 'bg-blue-600-c-80',
@@ -83,8 +81,6 @@ transformClass({
   111111111
 </view>
 ```
-
-
 
 ## 下载
 
@@ -96,8 +92,8 @@ npm i unplugin-transform-class -D
 <summary>Vite</summary><br>
 
 ```ts
-import { defineConfig } from 'vite'
 import transformClass from 'unplugin-transform-class/vite'
+import { defineConfig } from 'vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -109,7 +105,6 @@ export default defineConfig({
 ```
 
 <br></details>
-
 
 <details>
 <summary>webpack</summary><br>
@@ -241,7 +236,5 @@ const newCode = transformCode(code, rules)
 
 ![image-20220703141301371](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202207031413496.png)
 
-
 相关链接
 * [unocss-preset-weapp](https://github.com/MellowCo/unocss-preset-weapp) - unocss 小程序预设
-
