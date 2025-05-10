@@ -4,7 +4,7 @@ import { cacheTransformSelector, defaultRules } from '../utils'
 /**
  * 获取class
  */
-export function getClass(code: string) {
+export function getClass(code: string): string[][] {
   const matchs: string[][] = []
   // vue
   Array.from(code.matchAll(/\s:?[A-Za-z0-9]*[c|C]lass="([\s\S]*?)"/g)).forEach((m) => {
@@ -33,29 +33,29 @@ export function getClass(code: string) {
   })
 
   // className={xxxx}
-  Array.from(code.matchAll(/\s:?[A-Za-z0-9]*[c|C]lassName=[{]([\s\S]*?)[}]/g)).forEach((m) => {
+  Array.from(code.matchAll(/\s:?[A-Za-z0-9]*[c|C]lassName=\{([\s\S]*?)\}/g)).forEach((m) => {
     matchs.push([m[0], ...Array.from(m[1].matchAll(/["']([\s\S]+?)["']/g)).map(v => v[1])])
   })
 
   return matchs
 }
 
-export function getObjClass(className: string) {
+export function getObjClass(className: string): string[] {
   // class="{ 'bg-teal-200:55': title === 'Hello', 'h-1.000%': title === 'Hello' }"
   // => ['bg-teal-200:55','h-1.000%']
-  return Array.from(className.matchAll(/'([^']+?)'\s*:/g)).map(v => v[1])
+  return Array.from(className.matchAll(/'([^']+)'\s*:/g)).map(v => v[1])
 }
 
-export function getArrClass(className: string) {
+export function getArrClass(className: string): string[] {
   // [
   //   title === '2.3' ? 'font-$font-name bg-teal-200:55' :'tracking-[2/5]',
   //   isFont ? 'font-$font-name' : 'tracking-[2/5]'
   // ]
   // => ['font-$font-name bg-teal-200:55', 'tracking-[2/5]','font-$font-name', 'tracking-[2/5]']
-  return Array.from(className.matchAll(/(?<=[\?\:&])\s*'(.*?)'/g)).map(v => v[1])
+  return Array.from(className.matchAll(/(?<=[?:&])\s*'(.*?)'/g)).map(v => v[1])
 }
 
-export function transformCode(code: string, rules = defaultRules) {
+export function transformCode(code: string, rules = defaultRules): string {
   const classNames = getClass(code)
 
   classNames.forEach((c) => {
