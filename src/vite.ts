@@ -1,5 +1,4 @@
-import type { Options } from './types'
-import unplugin from '.'
+import { createVitePlugin } from 'unplugin'
+import { unpluginFactory } from '.'
 
-// TODO: some upstream lib failed generate invalid dts, remove the any in the future
-export default unplugin.vite as (options?: Options) => any
+export default createVitePlugin(unpluginFactory)

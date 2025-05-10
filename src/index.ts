@@ -1,9 +1,11 @@
+import type { UnpluginFactory } from 'unplugin'
+import type { Options } from './types'
 import { createUnplugin } from 'unplugin'
 import { createFilter } from '@rollup/pluginutils'
-import type { Options } from './types'
 import { transformCode } from './core'
 
-export default createUnplugin<Options>((options = {}) => {
+export const unpluginFactory: UnpluginFactory<Options> = (options = {}) => {
+
   const rules = options.rules
 
   const filter = createFilter(
@@ -21,4 +23,10 @@ export default createUnplugin<Options>((options = {}) => {
       return transformCode(code, rules)
     },
   }
-})
+
+
+}
+
+export const unplugin = /* #__PURE__ */ createUnplugin(unpluginFactory)
+
+export default unplugin
