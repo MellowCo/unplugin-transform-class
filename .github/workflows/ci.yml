@@ -13,16 +13,11 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-
+      - uses: actions/checkout@v4
       - name: Set node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
-          cache: pnpm
+          node-version: lts/*
 
       - name: Setup
         run: npm i -g @antfu/ni
@@ -38,33 +33,16 @@ jobs:
 
     strategy:
       matrix:
-        os: [ubuntu-latest]
-        node_version: [16, 18]
-        include:
-          - os: macos-latest
-            node_version: 18
-          - os: windows-latest
-            node_version: 18
+        node: [lts/*]
+        os: [ubuntu-latest, windows-latest, macos-latest]
       fail-fast: false
 
     steps:
-      - name: Set git to use LF
-        run: |
-          git config --global core.autocrlf false
-          git config --global core.eol lf
-
-      - uses: actions/checkout@v3
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-
-      - name: Set node ${{ matrix.node_version }}
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - name: Set node ${{ matrix.node }}
+        uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node_version }}
-          cache: pnpm
-
-      - run: corepack enable
+          node-version: ${{ matrix.node }}
 
       - name: Setup
         run: npm i -g @antfu/ni
