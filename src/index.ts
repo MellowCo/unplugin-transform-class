@@ -4,7 +4,7 @@ import { createUnplugin } from 'unplugin'
 import { createFilter } from '@rollup/pluginutils'
 import { transformCode } from './core'
 
-export const unpluginFactory: UnpluginFactory<Options> = (options = {}) => {
+export const unpluginFactory: UnpluginFactory<Options|undefined> = (options = {}) => {
 
   const rules = options.rules
 
