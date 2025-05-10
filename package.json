@@ -8,7 +8,7 @@
   "homepage": "https://github.com/MellowCo/unplugin-transform-class#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MellowCo/unplugin-transform-class"
+    "url": "git+https://github.com/MellowCo/unplugin-transform-class.git"
   },
   "bugs": {
     "url": "https://github.com/MellowCo/unplugin-transform-class/issues"
@@ -22,7 +22,7 @@
     "we",
     "class"
   ],
-"exports": {
+  "exports": {
     ".": {
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
@@ -65,7 +65,7 @@
     },
     "./*": "./*"
   },
-"main": "dist/index.cjs",
+  "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "typesVersions": {
@@ -79,7 +79,7 @@
   "files": [
     "dist"
   ],
-"peerDependencies": {
+  "peerDependencies": {
     "@farmfe/core": ">=1",
     "@nuxt/kit": "^3",
     "@nuxt/schema": "^3",
@@ -111,7 +111,7 @@
       "optional": true
     }
   },
-"scripts": {
+  "scripts": {
     "build": "tsup",
     "dev": "tsup --watch src",
     "lint": "eslint .",
@@ -121,7 +121,7 @@
     "start": "tsx src/index.ts",
     "test": "vitest",
     "uniapp2": "npm run build && npm -C examples/uniapp_vue2 run dev:mp-weixin",
-        "test:react": "vitest react"
+    "test:react": "vitest react"
   },
   "dependencies": {
     "@meoc/utils": "^0.2.10",
