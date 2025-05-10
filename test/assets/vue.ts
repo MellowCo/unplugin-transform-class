@@ -25,7 +25,17 @@ text-red-500:20
 
 export const replaceAllCode = `<view class="text-red-500:20  bg-blue-200:20 bg-[#333]/50 bg-[#999]/50">
 text-red-500:20
-</view>`
+</view>
+
+<view xxclass="text-red-500:20  bg-blue-200:20 bg-[#333]/50 bg-[#999]/50">
+text-red-500:20
+</view>
+
+<view xxClass="text-red-500:20  bg-blue-200:20 bg-[#333]/50 bg-[#999]/50">
+text-red-500:20
+</view>
+
+`
 
 export const vueCode = `<template>
 <view class="content,1 text">
@@ -80,6 +90,16 @@ export const vueCode2 = `
 
   <view
     :class="{
+      'bg-blue-600:80': flag,
+      'text-green-600/40': !flag,
+    }"
+
+    :xxclass="{
+      'bg-blue-600:80': flag,
+      'text-green-600/40': !flag,
+    }"
+
+    :xxClass="{
       'bg-blue-600:80': flag,
       'text-green-600/40': !flag,
     }"

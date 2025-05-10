@@ -46,7 +46,17 @@ exports[`vue > getObjClass 2`] = `
 exports[`vue > replaceAll 1`] = `
 "<view class="text-red-500_cl_20  bg-blue-200_cl_20 bg-_lfl__wn_333_lfr__sl_50 bg-_lfl__wn_999_lfr__sl_50">
 text-red-500:20
-</view>"
+</view>
+
+<view xxclass="text-red-500_cl_20  bg-blue-200_cl_20 bg-_lfl__wn_333_lfr__sl_50 bg-_lfl__wn_999_lfr__sl_50">
+text-red-500:20
+</view>
+
+<view xxClass="text-red-500_cl_20  bg-blue-200_cl_20 bg-_lfl__wn_333_lfr__sl_50 bg-_lfl__wn_999_lfr__sl_50">
+text-red-500:20
+</view>
+
+"
 `;
 
 exports[`vue > restoreSelector 1`] = `""`;
@@ -111,6 +121,16 @@ exports[`vue > transform rules 2`] = `
 
   <view
     :class="{
+      'bg-blue-600-cr-80': flag,
+      'text-green-600-sr-40': !flag,
+    }"
+
+    :xxclass="{
+      'bg-blue-600-cr-80': flag,
+      'text-green-600-sr-40': !flag,
+    }"
+
+    :xxClass="{
       'bg-blue-600-cr-80': flag,
       'text-green-600-sr-40': !flag,
     }"
@@ -282,6 +302,16 @@ exports[`vue > transformCode 2`] = `
 
   <view
     :class="{
+      'bg-blue-600_cl_80': flag,
+      'text-green-600_sl_40': !flag,
+    }"
+
+    :xxclass="{
+      'bg-blue-600_cl_80': flag,
+      'text-green-600_sl_40': !flag,
+    }"
+
+    :xxClass="{
       'bg-blue-600_cl_80': flag,
       'text-green-600_sl_40': !flag,
     }"

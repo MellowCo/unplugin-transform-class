@@ -111,3 +111,29 @@ export const emptyClassName = `
     <Button size="lg">123123</Button>
 </View>
 `
+
+// containerClassName
+export const xxClassName = `
+<View containerClassName="">
+    <Button size="lg">123123</Button>
+</View>
+
+<View ccClassName={}>
+</View>
+
+<View containerClassName="indent-1/2">
+    <Button size="lg">123123</Button>
+</View>
+
+<View containerclassName="indent-1/2">
+    <Button size="lg">123123</Button>
+</View>
+
+<View bbClassName="c-[#157]:60">
+</View>
+
+<View aaClassName='tracking-[2/5] bg-teal-200:55'> </View>
+
+
+<View eeclassName={clsx('font-[system-ui] bg-teal-200:55 h-1.000%', containerClassName)}></View>
+`

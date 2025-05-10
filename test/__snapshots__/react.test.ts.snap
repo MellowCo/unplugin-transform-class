@@ -3,115 +3,115 @@
 exports[`react > getClass 1`] = `
 [
   [
-    "className='content'",
+    " className='content'",
     "content",
   ],
   [
-    "className='indent-1/2'",
+    " className='indent-1/2'",
     "indent-1/2",
   ],
   [
-    "className='font-[system-ui] bg-teal-200:55'",
+    " className='font-[system-ui] bg-teal-200:55'",
     "font-[system-ui] bg-teal-200:55",
   ],
   [
-    "className='font-$font-name'",
+    " className='font-$font-name'",
     "font-$font-name",
   ],
   [
-    "className='tracking-[2/5] bg-teal-200:55'",
+    " className='tracking-[2/5] bg-teal-200:55'",
     "tracking-[2/5] bg-teal-200:55",
   ],
   [
-    "className='h-1.000%'",
+    " className='h-1.000%'",
     "h-1.000%",
   ],
   [
-    "className='bg-teal-200:55'",
+    " className='bg-teal-200:55'",
     "bg-teal-200:55",
   ],
   [
-    "className='text-area'",
+    " className='text-area'",
     "text-area",
   ],
   [
-    "className='text-gray-500_50'",
+    " className='text-gray-500_50'",
     "text-gray-500_50",
   ],
   [
-    "className='text-gray-500:50'",
+    " className='text-gray-500:50'",
     "text-gray-500:50",
   ],
   [
-    "className="text-gray-500/50"",
+    " className="text-gray-500/50"",
     "text-gray-500/50",
   ],
   [
-    "className="text-red-500_50"",
+    " className="text-red-500_50"",
     "text-red-500_50",
   ],
   [
-    "className="text-red-500:50"",
+    " className="text-red-500:50"",
     "text-red-500:50",
   ],
   [
-    "className="text-red-500/50"",
+    " className="text-red-500/50"",
     "text-red-500/50",
   ],
   [
-    "className="text-yellow-500_50"",
+    " className="text-yellow-500_50"",
     "text-yellow-500_50",
   ],
   [
-    "className="text-yellow-500:50"",
+    " className="text-yellow-500:50"",
     "text-yellow-500:50",
   ],
   [
-    "className="text-yellow-500/50"",
+    " className="text-yellow-500/50"",
     "text-yellow-500/50",
   ],
   [
-    "className="text-blue-500_50"",
+    " className="text-blue-500_50"",
     "text-blue-500_50",
   ],
   [
-    "className="text-blue-500/50"",
+    " className="text-blue-500/50"",
     "text-blue-500/50",
   ],
   [
-    "className="text-blue-500:50"",
+    " className="text-blue-500:50"",
     "text-blue-500:50",
   ],
   [
-    "className="text-green-500_50"",
+    " className="text-green-500_50"",
     "text-green-500_50",
   ],
   [
-    "className="text-green-500:50"",
+    " className="text-green-500:50"",
     "text-green-500:50",
   ],
   [
-    "className="text-green-500/50"",
+    " className="text-green-500/50"",
     "text-green-500/50",
   ],
   [
-    "className="c-hex-157_60"",
+    " className="c-hex-157_60"",
     "c-hex-157_60",
   ],
   [
-    "className="c-hex-157/60"",
+    " className="c-hex-157/60"",
     "c-hex-157/60",
   ],
   [
-    "className="c-[#157]/60"",
+    " className="c-[#157]/60"",
     "c-[#157]/60",
   ],
   [
-    "className="c-[#157]_60"",
+    " className="c-[#157]_60"",
     "c-[#157]_60",
   ],
   [
-    "className="c-[#157]:60"",
+    " className="c-[#157]:60"",
     "c-[#157]:60",
   ],
 ]
@@ -120,12 +120,12 @@ exports[`react > getClass 1`] = `
 exports[`react > getClass 2`] = `
 [
   [
-    "className={day < 20 ? 'c-#e67e22' : "c-[#157]/60"}",
+    " className={day < 20 ? 'c-#e67e22' : "c-[#157]/60"}",
     "c-#e67e22",
     "c-[#157]/60",
   ],
   [
-    "className={classnames({
+    " className={classnames({
   'c-#e67e22':true, 
   "tracking-[2/5]":false
 }",
@@ -138,11 +138,43 @@ exports[`react > getClass 2`] = `
 exports[`react > getClass 3`] = `
 [
   [
-    "className=""",
+    " className=""",
     "",
   ],
   [
-    "className={}",
+    " className={}",
+  ],
+]
+`;
+
+exports[`react > getClass 4`] = `
+[
+  [
+    " containerClassName=""",
+    "",
+  ],
+  [
+    " containerClassName="indent-1/2"",
+    "indent-1/2",
+  ],
+  [
+    " containerclassName="indent-1/2"",
+    "indent-1/2",
+  ],
+  [
+    " bbClassName="c-[#157]:60"",
+    "c-[#157]:60",
+  ],
+  [
+    " aaClassName='tracking-[2/5] bg-teal-200:55'",
+    "tracking-[2/5] bg-teal-200:55",
+  ],
+  [
+    " ccClassName={}",
+  ],
+  [
+    " eeclassName={clsx('font-[system-ui] bg-teal-200:55 h-1.000%', containerClassName)}",
+    "font-[system-ui] bg-teal-200:55 h-1.000%",
   ],
 ]
 `;
@@ -264,5 +296,32 @@ exports[`react > transformCode 3`] = `
 <View className={}>
     <Button size="lg">123123</Button>
 </View>
+"
+`;
+
+exports[`react > transformCode 4`] = `
+"
+<View containerClassName="">
+    <Button size="lg">123123</Button>
+</View>
+
+<View ccClassName={}>
+</View>
+
+<View containerClassName="indent-1_sl_2">
+    <Button size="lg">123123</Button>
+</View>
+
+<View containerclassName="indent-1_sl_2">
+    <Button size="lg">123123</Button>
+</View>
+
+<View bbClassName="c-_lfl__wn_157_lfr__cl_60">
+</View>
+
+<View aaClassName='tracking-_lfl_2_sl_5_lfr_ bg-teal-200_cl_55'> </View>
+
+
+<View eeclassName={clsx('font-_lfl_system-ui_lfr_ bg-teal-200_cl_55 h-1_dl_000_pes_', containerClassName)}></View>
 "
 `;
